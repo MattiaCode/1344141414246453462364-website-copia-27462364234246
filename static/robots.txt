@@ -1,0 +1,19 @@
+# robots.txt for MattiaCode Portfolio
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mattiacode.it/sitemap.xml
+
+# Disallow admin or private paths (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all assets
+Allow: /img/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.svg
