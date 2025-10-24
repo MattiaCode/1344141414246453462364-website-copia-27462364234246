@@ -1,174 +1,130 @@
 <script lang="ts">
-	import { Target, Code, Palette, Database, Cloud, Wrench } from 'lucide-svelte';
-
-	const skillCategories = [
+	const posts = [
 		{
-			icon: Code,
-			title: 'Frontend Development',
-			skills: [
-				{ name: 'HTML/CSS', level: 95 },
-				{ name: 'JavaScript/TypeScript', level: 90 },
-				{ name: 'React/Vue/Svelte', level: 88 },
-				{ name: 'TailwindCSS', level: 92 }
-			]
+			id: 1,
+			title: 'Getting Started with SvelteKit',
+			description: 'A comprehensive guide to building modern web applications with SvelteKit.',
+			date: 'December 2024',
+			category: 'Development',
+			readTime: '5 min read',
+			gradient: 'from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20'
 		},
 		{
-			icon: Database,
-			title: 'Backend Development',
-			skills: [
-				{ name: 'Node.js', level: 85 },
-				{ name: 'Python', level: 80 },
-				{ name: 'PHP', level: 75 },
-				{ name: 'REST API', level: 90 }
-			]
+			id: 2,
+			title: 'Design Principles for Web',
+			description: 'Essential principles every web designer should know for creating better interfaces.',
+			date: 'November 2024',
+			category: 'Design',
+			readTime: '7 min read',
+			gradient: 'from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20'
 		},
 		{
-			icon: Database,
-			title: 'Database',
-			skills: [
-				{ name: 'MongoDB', level: 85 },
-				{ name: 'PostgreSQL', level: 82 },
-				{ name: 'MySQL', level: 88 },
-				{ name: 'Redis', level: 75 }
-			]
+			id: 3,
+			title: 'TypeScript Best Practices',
+			description: 'Tips and tricks for writing clean and maintainable TypeScript code.',
+			date: 'October 2024',
+			category: 'Development',
+			readTime: '6 min read',
+			gradient: 'from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20'
 		},
 		{
-			icon: Cloud,
-			title: 'DevOps & Tools',
-			skills: [
-				{ name: 'Git/GitHub', level: 90 },
-				{ name: 'Docker', level: 80 },
-				{ name: 'AWS/Azure', level: 75 },
-				{ name: 'CI/CD', level: 78 }
-			]
+			id: 4,
+			title: 'Responsive Design Patterns',
+			description: 'Modern approaches to building responsive layouts that work everywhere.',
+			date: 'September 2024',
+			category: 'Design',
+			readTime: '8 min read',
+			gradient: 'from-orange-100 to-amber-100 dark:from-orange-900/20 dark:to-amber-900/20'
 		},
 		{
-			icon: Palette,
-			title: 'Design',
-			skills: [
-				{ name: 'UI/UX Design', level: 85 },
-				{ name: 'Figma', level: 88 },
-				{ name: 'Adobe XD', level: 80 },
-				{ name: 'Responsive Design', level: 95 }
-			]
+			id: 5,
+			title: 'State Management in React',
+			description: 'Understanding different state management solutions and when to use them.',
+			date: 'August 2024',
+			category: 'Development',
+			readTime: '10 min read',
+			gradient: 'from-cyan-100 to-blue-100 dark:from-cyan-900/20 dark:to-blue-900/20'
 		},
 		{
-			icon: Wrench,
-			title: 'Other Skills',
-			skills: [
-				{ name: 'Agile/Scrum', level: 85 },
-				{ name: 'Testing', level: 80 },
-				{ name: 'SEO', level: 75 },
-				{ name: 'Performance', level: 88 }
-			]
+			id: 6,
+			title: 'Accessibility Matters',
+			description: 'Why web accessibility is crucial and how to implement it effectively.',
+			date: 'July 2024',
+			category: 'Design',
+			readTime: '6 min read',
+			gradient: 'from-violet-100 to-purple-100 dark:from-violet-900/20 dark:to-purple-900/20'
 		}
 	];
 </script>
 
 <svelte:head>
 	<title>Skills - Portfolio</title>
-	<meta name="description" content="Le mie competenze e abilità tecniche" />
+	<meta name="description" content="Articles and thoughts on design, development, and technology" />
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-6 py-20">
+<div class="max-w-4xl mx-auto px-6 sm:px-8 py-20">
 	<!-- Header -->
-	<div class="text-center mb-16">
-		<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 mb-6">
-			<Target size={16} class="text-blue-500" />
-			<span class="text-sm text-gray-600 dark:text-gray-400">Le mie competenze</span>
-		</div>
-		<h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
-			Skills
+	<div class="mb-16">
+		<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+			Skills & Writing
 		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-			Tecnologie e strumenti che utilizzo quotidianamente per creare soluzioni digitali moderne e performanti.
+		<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+			Thoughts on design, development, and building great products. Sharing knowledge and experiences from my journey.
 		</p>
 	</div>
 
-	<!-- Skills Grid -->
-	<div class="grid md:grid-cols-2 gap-8 mb-16">
-		{#each skillCategories as category}
-			<div class="card">
-				<div class="flex items-center gap-3 mb-6">
-					<div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/20">
-						<svelte:component this={category.icon} size={24} class="text-blue-500" />
+	<!-- Posts/Articles -->
+	<div class="space-y-12">
+		{#each posts as post}
+			<article class="group">
+				<a href="#" class="block">
+					<!-- Visual Element -->
+					<div class="aspect-[2/1] rounded-2xl bg-gradient-to-br {post.gradient} mb-6 overflow-hidden">
+						<div class="w-full h-full group-hover:scale-105 transition-transform duration-300"></div>
 					</div>
-					<h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-						{category.title}
-					</h2>
-				</div>
 
-				<div class="space-y-4">
-					{#each category.skills as skill}
-						<div>
-							<div class="flex justify-between mb-2">
-								<span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-									{skill.name}
-								</span>
-								<span class="text-sm text-gray-500 dark:text-gray-500">
-									{skill.level}%
-								</span>
-							</div>
-							<div class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
-								<div
-									class="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-1000"
-									style="width: {skill.level}%"
-								></div>
-							</div>
-						</div>
-					{/each}
-				</div>
-			</div>
+					<!-- Post Info -->
+					<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
+						<span>{post.date}</span>
+						<span>·</span>
+						<span>{post.category}</span>
+						<span>·</span>
+						<span>{post.readTime}</span>
+					</div>
+
+					<!-- Title & Description -->
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+						{post.title}
+					</h2>
+					<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+						{post.description}
+					</p>
+				</a>
+			</article>
 		{/each}
 	</div>
 
-	<!-- Additional Info -->
-	<div class="grid md:grid-cols-3 gap-6">
-		<div class="card text-center">
-			<div class="text-4xl mb-3">🎓</div>
-			<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Continuous Learning</h3>
-			<p class="text-gray-600 dark:text-gray-400">
-				Sempre aggiornato con le ultime tecnologie e best practices
-			</p>
-		</div>
-		<div class="card text-center">
-			<div class="text-4xl mb-3">🚀</div>
-			<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Fast Learner</h3>
-			<p class="text-gray-600 dark:text-gray-400">
-				Capacità di apprendere rapidamente nuove tecnologie e frameworks
-			</p>
-		</div>
-		<div class="card text-center">
-			<div class="text-4xl mb-3">🤝</div>
-			<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Team Player</h3>
-			<p class="text-gray-600 dark:text-gray-400">
-				Esperienza in team collaborativi e metodologie agile
-			</p>
-		</div>
-	</div>
-
-	<!-- Certifications -->
-	<div class="card mt-12 text-center max-w-3xl mx-auto">
-		<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-			Certificazioni & Formazione
-		</h3>
-		<div class="grid md:grid-cols-2 gap-4 text-left">
-			<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-				<div class="font-semibold text-gray-900 dark:text-white">Web Development Professional</div>
-				<div class="text-sm text-gray-600 dark:text-gray-400">2023</div>
-			</div>
-			<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-				<div class="font-semibold text-gray-900 dark:text-white">Advanced JavaScript</div>
-				<div class="text-sm text-gray-600 dark:text-gray-400">2022</div>
-			</div>
-			<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-				<div class="font-semibold text-gray-900 dark:text-white">UI/UX Design Fundamentals</div>
-				<div class="text-sm text-gray-600 dark:text-gray-400">2022</div>
-			</div>
-			<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-				<div class="font-semibold text-gray-900 dark:text-white">Cloud Architecture</div>
-				<div class="text-sm text-gray-600 dark:text-gray-400">2021</div>
-			</div>
+	<!-- CTA -->
+	<div class="mt-20 pt-12 border-t border-gray-200 dark:border-gray-800">
+		<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+			Want to learn more?
+		</h2>
+		<p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+			I regularly share insights and tutorials on my blog and social media.
+		</p>
+		<div class="flex flex-wrap gap-4">
+			<a
+				href="#"
+				class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:opacity-90 transition-opacity"
+			>
+				Subscribe to Newsletter
+			</a>
+			<a
+				href="#"
+				class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+			>
+				Follow on Twitter
+			</a>
 		</div>
 	</div>
 </div>

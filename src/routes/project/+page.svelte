@@ -1,58 +1,70 @@
 <script lang="ts">
-	import { ExternalLink, Github, Folder } from 'lucide-svelte';
+	import { ExternalLink, Github } from 'lucide-svelte';
 
 	const projects = [
 		{
 			id: 1,
 			title: 'E-Commerce Platform',
-			description: 'Piattaforma e-commerce completa con gestione ordini, pagamenti e dashboard amministrativa.',
-			tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-			image: '🛒',
+			description: 'A modern e-commerce solution with seamless checkout and inventory management.',
+			year: '2024',
+			category: 'Development',
+			gradient: 'from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20',
+			emoji: '🛒',
 			link: '#',
 			github: '#'
 		},
 		{
 			id: 2,
-			title: 'Social Media Dashboard',
-			description: 'Dashboard per analisi e gestione di multipli account social media con grafici in tempo reale.',
-			tags: ['Vue.js', 'Firebase', 'Chart.js'],
-			image: '📊',
+			title: 'Social Dashboard',
+			description: 'Analytics dashboard for social media management and engagement tracking.',
+			year: '2024',
+			category: 'Design',
+			gradient: 'from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20',
+			emoji: '📊',
 			link: '#',
 			github: '#'
 		},
 		{
 			id: 3,
-			title: 'Task Management App',
-			description: 'Applicazione per la gestione di progetti e task con sistema di collaborazione in team.',
-			tags: ['SvelteKit', 'TypeScript', 'PostgreSQL'],
-			image: '✅',
+			title: 'Task Manager',
+			description: 'Collaborative task management with real-time updates and team features.',
+			year: '2023',
+			category: 'Development',
+			gradient: 'from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20',
+			emoji: '✅',
 			link: '#',
 			github: '#'
 		},
 		{
 			id: 4,
-			title: 'Weather Forecast',
-			description: 'App meteo con previsioni a 7 giorni, mappe interattive e notifiche personalizzate.',
-			tags: ['React Native', 'OpenWeather API'],
-			image: '🌤️',
+			title: 'Weather App',
+			description: 'Clean weather forecast app with beautiful UI and accurate predictions.',
+			year: '2023',
+			category: 'Mobile',
+			gradient: 'from-cyan-100 to-blue-100 dark:from-cyan-900/20 dark:to-blue-900/20',
+			emoji: '🌤️',
 			link: '#',
 			github: '#'
 		},
 		{
 			id: 5,
 			title: 'Blog Platform',
-			description: 'Piattaforma di blogging con editor markdown, sistema di commenti e SEO ottimizzato.',
-			tags: ['Next.js', 'Tailwind', 'MDX'],
-			image: '📝',
+			description: 'Modern blogging platform with markdown support and SEO optimization.',
+			year: '2023',
+			category: 'Development',
+			gradient: 'from-orange-100 to-amber-100 dark:from-orange-900/20 dark:to-amber-900/20',
+			emoji: '📝',
 			link: '#',
 			github: '#'
 		},
 		{
 			id: 6,
-			title: 'Portfolio Generator',
-			description: 'Tool per generare portfolio personali automaticamente da template personalizzabili.',
-			tags: ['Svelte', 'Vite', 'CSS'],
-			image: '🎨',
+			title: 'Portfolio Builder',
+			description: 'Easy-to-use portfolio generator with customizable templates.',
+			year: '2022',
+			category: 'Design',
+			gradient: 'from-violet-100 to-purple-100 dark:from-violet-900/20 dark:to-purple-900/20',
+			emoji: '🎨',
 			link: '#',
 			github: '#'
 		}
@@ -60,87 +72,87 @@
 </script>
 
 <svelte:head>
-	<title>Project - Portfolio</title>
-	<meta name="description" content="I miei progetti e lavori recenti" />
+	<title>Projects - Portfolio</title>
+	<meta name="description" content="Selected projects showcasing design and development work" />
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-6 py-20">
+<div class="max-w-6xl mx-auto px-6 sm:px-8 py-20">
 	<!-- Header -->
-	<div class="text-center mb-16">
-		<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 mb-6">
-			<Folder size={16} class="text-blue-500" />
-			<span class="text-sm text-gray-600 dark:text-gray-400">I miei lavori</span>
-		</div>
-		<h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
-			Project
+	<div class="mb-16">
+		<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+			Projects
 		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-			Una selezione dei miei progetti più recenti e interessanti. Ogni progetto è realizzato con passione e attenzione ai dettagli.
+		<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+			A selection of projects I've worked on, ranging from web applications to mobile experiences.
 		</p>
 	</div>
 
 	<!-- Projects Grid -->
-	<div class="project-grid">
+	<div class="grid md:grid-cols-2 gap-8 mb-20">
 		{#each projects as project}
-			<div class="card group">
-				<!-- Project Icon/Image -->
-				<div class="text-6xl mb-4 text-center">
-					{project.image}
+			<article class="group">
+				<!-- Project Image/Thumbnail -->
+				<a href={project.link} class="block mb-4">
+					<div class="aspect-video rounded-2xl bg-gradient-to-br {project.gradient} overflow-hidden">
+						<div class="w-full h-full flex items-center justify-center text-7xl group-hover:scale-105 transition-transform duration-300">
+							{project.emoji}
+						</div>
+					</div>
+				</a>
+
+				<!-- Project Info -->
+				<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
+					<span>{project.year}</span>
+					<span>·</span>
+					<span>{project.category}</span>
 				</div>
 
-				<!-- Project Title -->
-				<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-					{project.title}
+				<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+					<a href={project.link}>{project.title}</a>
 				</h3>
 
-				<!-- Project Description -->
-				<p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+				<p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
 					{project.description}
 				</p>
 
-				<!-- Tags -->
-				<div class="flex flex-wrap gap-2 mb-4">
-					{#each project.tags as tag}
-						<span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
-							{tag}
-						</span>
-					{/each}
-				</div>
-
 				<!-- Links -->
-				<div class="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
+				<div class="flex items-center gap-4">
 					<a
 						href={project.link}
-						class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+						class="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<ExternalLink size={16} />
-						<span>Live Demo</span>
+						<span>View Project</span>
 					</a>
 					<a
 						href={project.github}
-						class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+						class="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<Github size={16} />
-						<span>GitHub</span>
+						<span>Code</span>
 					</a>
 				</div>
-			</div>
+			</article>
 		{/each}
 	</div>
 
-	<!-- CTA Section -->
-	<div class="card text-center mt-16 max-w-2xl mx-auto">
-		<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-			Hai un progetto in mente?
-		</h3>
-		<p class="text-gray-600 dark:text-gray-400 mb-6">
-			Sono sempre interessato a nuove opportunità e collaborazioni. Parliamone!
+	<!-- CTA -->
+	<div class="text-center py-12">
+		<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+			Interested in working together?
+		</h2>
+		<p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+			I'm always open to discussing new projects and opportunities.
 		</p>
 		<a
 			href="/about"
-			class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:scale-105 transition-transform"
+			class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:opacity-90 transition-opacity"
 		>
-			Contattami
+			Get in Touch
 		</a>
 	</div>
 </div>
