@@ -32,7 +32,7 @@
 			</p>
 
 			<!-- Card profilo -->
-			<a href="/about" class="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all backdrop-blur-sm">
+			<a href="/about" class="group inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-gray-100/40 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all backdrop-blur-sm">
 				<!-- Avatar -->
 				<div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
 					S

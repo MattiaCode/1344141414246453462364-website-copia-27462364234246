@@ -210,7 +210,7 @@
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+<footer class="border-t border-gray-200 dark:border-gray-800 dark:bg-gray-950">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
 		<div class="flex flex-col md:flex-row justify-between items-center gap-6">
 			<!-- Left side - Copyright -->
