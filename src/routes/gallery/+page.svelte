@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { X, ChevronLeft, ChevronRight } from 'lucide-svelte';
+	import { X } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	let selectedImage = $state<number | null>(null);
@@ -38,28 +38,12 @@
 		}
 	}
 
-	function nextImage() {
-		if (selectedImage !== null) {
-			selectedImage = (selectedImage + 1) % galleryImages.length;
-		}
-	}
-
-	function prevImage() {
-		if (selectedImage !== null) {
-			selectedImage = selectedImage === 0 ? galleryImages.length - 1 : selectedImage - 1;
-		}
-	}
-
 	onMount(() => {
 		function handleKeydown(e: KeyboardEvent) {
 			if (selectedImage === null) return;
 
 			if (e.key === 'Escape') {
 				closeLightbox();
-			} else if (e.key === 'ArrowRight') {
-				nextImage();
-			} else if (e.key === 'ArrowLeft') {
-				prevImage();
 			}
 		}
 
@@ -109,7 +93,7 @@
 {#if selectedImage !== null}
 	{@const currentImage = galleryImages[selectedImage]}
 	<div
-		class="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+		class="fixed inset-0 z-50 bg-black/20 dark:bg-black/40 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8"
 		onclick={closeLightbox}
 		role="button"
 		tabindex="0"
@@ -118,59 +102,19 @@
 		<!-- Close button -->
 		<button
 			onclick={closeLightbox}
-			class="absolute top-4 right-4 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
+			class="absolute top-4 right-4 p-3 rounded-full bg-gray-900/80 dark:bg-white/80 hover:bg-gray-900 dark:hover:bg-white transition-colors z-10 backdrop-blur-sm"
 			aria-label="Close"
 		>
-			<X size={24} class="text-white" />
-		</button>
-
-		<!-- Previous button -->
-		<button
-			onclick={(e) => {
-				e.stopPropagation();
-				prevImage();
-			}}
-			class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-			aria-label="Previous image"
-		>
-			<ChevronLeft size={32} class="text-white" />
-		</button>
-
-		<!-- Next button -->
-		<button
-			onclick={(e) => {
-				e.stopPropagation();
-				nextImage();
-			}}
-			class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-			aria-label="Next image"
-		>
-			<ChevronRight size={32} class="text-white" />
+			<X size={24} class="text-white dark:text-gray-900" />
 		</button>
 
 		<!-- Image -->
-		<div
-			class="relative max-w-7xl max-h-[90vh] w-full"
+		<img
+			src={currentImage.url}
+			alt={currentImage.alt}
+			class="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl"
 			onclick={(e) => e.stopPropagation()}
-			onkeydown={(e) => {
-				if (e.key === 'Enter' || e.key === ' ') {
-					e.stopPropagation();
-				}
-			}}
-			role="button"
-			tabindex="0"
-		>
-			<img
-				src={currentImage.url}
-				alt={currentImage.alt}
-				class="w-full h-full object-contain rounded-lg"
-			/>
-
-			<!-- Image counter -->
-			<div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-black/50 text-white text-sm">
-				{selectedImage + 1} / {galleryImages.length}
-			</div>
-		</div>
+		/>
 	</div>
 {/if}
 
