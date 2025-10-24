@@ -89,6 +89,9 @@
 					<Home size={18} class="text-gray-700 dark:text-gray-300" />
 				</a>
 
+				<!-- Separatore 1 -->
+				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
+
 				<!-- About - icona + testo -->
 				<a
 					href="/about"
@@ -133,7 +136,7 @@
 					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">Gallery</span>
 				</a>
 
-				<!-- Separatore visivo -->
+				<!-- Separatore 2 -->
 				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
 
 				<!-- Toggle tema - solo icona -->

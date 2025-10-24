@@ -7,16 +7,17 @@
 	<meta name="description" content="Learn more about my journey, experience, and what drives my work" />
 </svelte:head>
 
-<div class="max-w-4xl mx-auto px-6 sm:px-8 py-20">
-	<!-- Header -->
-	<div class="mb-16">
-		<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-			About Me
-		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-			I'm a designer and developer with a passion for creating beautiful, functional digital experiences. Based in Jakarta, working with clients worldwide.
-		</p>
-	</div>
+<div class="hero-gradient">
+	<div class="max-w-4xl mx-auto px-6 sm:px-8 py-20">
+		<!-- Header -->
+		<div class="mb-16">
+			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+				About Me
+			</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+				I'm a designer and developer with a passion for creating beautiful, functional digital experiences. Based in Jakarta, working with clients worldwide.
+			</p>
+		</div>
 
 	<!-- Profile Section -->
 	<div class="mb-20">
@@ -130,4 +131,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

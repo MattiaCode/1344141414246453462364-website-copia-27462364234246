@@ -76,16 +76,17 @@
 	<meta name="description" content="Selected projects showcasing design and development work" />
 </svelte:head>
 
-<div class="max-w-6xl mx-auto px-6 sm:px-8 py-20">
-	<!-- Header -->
-	<div class="mb-16">
-		<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-			Projects
-		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-			A selection of projects I've worked on, ranging from web applications to mobile experiences.
-		</p>
-	</div>
+<div class="hero-gradient">
+	<div class="max-w-6xl mx-auto px-6 sm:px-8 py-20">
+		<!-- Header -->
+		<div class="mb-16">
+			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+				Projects
+			</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+				A selection of projects I've worked on, ranging from web applications to mobile experiences.
+			</p>
+		</div>
 
 	<!-- Projects Grid -->
 	<div class="grid md:grid-cols-2 gap-8 mb-20">
@@ -155,4 +156,5 @@
 			Get in Touch
 		</a>
 	</div>
+</div>
 </div>

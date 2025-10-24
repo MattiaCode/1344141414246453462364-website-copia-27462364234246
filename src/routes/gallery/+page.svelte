@@ -38,16 +38,17 @@
 	<meta name="description" content="A visual showcase of creative work, designs, and projects" />
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-6 sm:px-8 py-20">
-	<!-- Header -->
-	<div class="mb-16">
-		<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-			Gallery
-		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-			A visual collection of creative work, explorations, and projects. Click any image to view it larger.
-		</p>
-	</div>
+<div class="hero-gradient">
+	<div class="max-w-7xl mx-auto px-6 sm:px-8 py-20">
+		<!-- Header -->
+		<div class="mb-16">
+			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+				Gallery
+			</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+				A visual collection of creative work, explorations, and projects. Click any image to view it larger.
+			</p>
+		</div>
 
 	<!-- Gallery Grid -->
 	<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -69,6 +70,7 @@
 			</button>
 		{/each}
 	</div>
+</div>
 </div>
 
 <!-- Lightbox Modal -->

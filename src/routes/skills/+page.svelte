@@ -62,16 +62,17 @@
 	<meta name="description" content="Articles and thoughts on design, development, and technology" />
 </svelte:head>
 
-<div class="max-w-4xl mx-auto px-6 sm:px-8 py-20">
-	<!-- Header -->
-	<div class="mb-16">
-		<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-			Skills & Writing
-		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-			Thoughts on design, development, and building great products. Sharing knowledge and experiences from my journey.
-		</p>
-	</div>
+<div class="hero-gradient">
+	<div class="max-w-4xl mx-auto px-6 sm:px-8 py-20">
+		<!-- Header -->
+		<div class="mb-16">
+			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+				Skills & Writing
+			</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+				Thoughts on design, development, and building great products. Sharing knowledge and experiences from my journey.
+			</p>
+		</div>
 
 	<!-- Posts/Articles -->
 	<div class="space-y-12">
@@ -127,4 +128,5 @@
 			</a>
 		</div>
 	</div>
+</div>
 </div>
