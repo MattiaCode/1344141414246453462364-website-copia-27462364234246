@@ -78,7 +78,7 @@
 	<div class="space-y-12">
 		{#each posts as post}
 			<article class="group">
-				<a href="#" class="block">
+				<div class="block">
 					<!-- Visual Element -->
 					<div class="aspect-[2/1] rounded-2xl bg-gradient-to-br {post.gradient} mb-6 overflow-hidden">
 						<div class="w-full h-full group-hover:scale-105 transition-transform duration-300"></div>
@@ -100,7 +100,7 @@
 					<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
 						{post.description}
 					</p>
-				</a>
+				</div>
 			</article>
 		{/each}
 	</div>
@@ -114,18 +114,18 @@
 			I regularly share insights and tutorials on my blog and social media.
 		</p>
 		<div class="flex flex-wrap gap-4">
-			<a
-				href="#"
+			<button
+				type="button"
 				class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:opacity-90 transition-opacity"
 			>
 				Subscribe to Newsletter
-			</a>
-			<a
-				href="#"
+			</button>
+			<button
+				type="button"
 				class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
 			>
 				Follow on Twitter
-			</a>
+			</button>
 		</div>
 	</div>
 </div>
