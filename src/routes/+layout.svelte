@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import Logo from '$lib/components/Logo.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
@@ -71,10 +72,8 @@
 <nav class="fixed top-0 left-0 right-0 z-50">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
 		<div class="flex items-center justify-between gap-4">
-			<!-- Logo/Name a sinistra -->
-			<div class="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
-				Asia/Jakarta
-			</div>
+			<!-- Logo a sinistra -->
+			<Logo class="flex-shrink-0" />
 
 			<!-- UN UNICO contenitore centrale con TUTTI i link e toggle -->
 			<div class="hidden md:flex items-center bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1 py-1 backdrop-blur-sm">
