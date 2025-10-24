@@ -7,9 +7,9 @@
 	<meta name="description" content="Building bridges between design and code" />
 </svelte:head>
 
-<!-- Hero Section con gradiente BLU VISIBILE -->
+<!-- Hero Section -->
 <div class="hero-gradient">
-	<div class="min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 py-20">
+	<div class="flex flex-col items-center justify-center px-6 sm:px-8 pt-12 pb-16">
 		<div class="max-w-4xl w-full mx-auto text-center">
 			<!-- Badge pills PICCOLI in alto -->
 			<div class="flex items-center justify-center gap-2 mb-6">
