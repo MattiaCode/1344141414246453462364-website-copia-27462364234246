@@ -215,10 +215,20 @@
 <!-- Footer -->
 <footer class="border-t border-gray-200 dark:border-gray-800 dark:bg-gray-950">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+		<!-- Badge Iubenda -->
+		<div class="flex justify-center mb-8">
+			<a href="/iubenda-partner" title="iubenda Certified Bronze Partner" class="inline-block hover:opacity-90 transition-opacity">
+				<img src="https://www.iubenda.com/partner/bronze@2x.png" alt="iubenda Certified Bronze Partner" class="w-full max-w-[200px] h-auto" loading="lazy">
+			</a>
+		</div>
+
 		<div class="flex flex-col md:flex-row justify-between items-center gap-6">
-			<!-- Left side - Copyright -->
-			<div class="text-sm text-gray-600 dark:text-gray-400">
-				© {new Date().getFullYear()} {$t.footer.copyright}
+			<!-- Left side - Copyright + Privacy -->
+			<div class="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+				<span>© {new Date().getFullYear()} {$t.footer.copyright}</span>
+				<a href="/privacy-policy" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+					{$t.nav.privacy}
+				</a>
 			</div>
 
 			<!-- Center - Social links -->
