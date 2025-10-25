@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "project": "Project",
+    "skills": "Skills",
+    "gallery": "Gallery",
+    "privacy": "Privacy Policy"
+  },
+  "theme": {
+    "dark": "Modalità Scura",
+    "light": "Modalità Chiara"
+  },
+  "home": {
+    "badge1": "Once UI",
+    "badge2": "Featured work",
+    "title": "Costruire ponti tra design e codice",
+    "subtitle": "Designer e sviluppatore specializzato nella creazione di esperienze digitali bellissime e funzionali",
+    "aboutTitle": "Ciao! 👋",
+    "aboutText": "Sono un designer e sviluppatore con passione per la creazione di prodotti digitali che combinano estetica e funzionalità.",
+    "featuredProjectTitle": "Once UI Design System",
+    "featuredProjectDescription": "Un sistema di design completo creato per semplificare lo sviluppo e garantire coerenza tra progetti.",
+    "moreWork": "Altri progetti in evidenza",
+    "viewAll": "Vedi tutti i progetti"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Designer e sviluppatore con passione per la creazione di esperienze digitali eccezionali",
+    "location": "Milan, Italy",
+    "language": "Italiano",
+    "navigation": "Navigazione",
+    "introduction": "Introduzione",
+    "workExperience": "Esperienza",
+    "studies": "Studi",
+    "technicalSkills": "Competenze Tecniche",
+    "introTitle": "Ciao! 👋",
+    "introText1": "Sono un designer e sviluppatore full-stack con una passione per la creazione di prodotti digitali che combinano bellezza estetica con funzionalità robusta.",
+    "introText2": "Con oltre 5 anni di esperienza, ho lavorato su una vasta gamma di progetti, da startup innovative a grandi aziende, sempre concentrandomi sulla creazione di esperienze utente eccezionali.",
+    "workTitle": "Esperienza Lavorativa",
+    "work1Title": "Senior Frontend Developer",
+    "work1Company": "Tech Company",
+    "work1Period": "2022 - Presente",
+    "work1Description": "Sviluppo di applicazioni web moderne e sistemi di design scalabili.",
+    "work2Title": "Full Stack Developer",
+    "work2Company": "Digital Agency",
+    "work2Period": "2020 - 2022",
+    "work2Description": "Creazione di soluzioni web complete per clienti internazionali.",
+    "studiesTitle": "Formazione",
+    "study1Title": "Master in Computer Science",
+    "study1School": "Università di Milano",
+    "study1Period": "2018 - 2020",
+    "study2Title": "Laurea in Informatica",
+    "study2School": "Politecnico di Milano",
+    "study2Period": "2015 - 2018",
+    "skillsTitle": "Competenze Tecniche",
+    "skillFrontend": "Front-End Development",
+    "skillBackend": "Back-End Development",
+    "skillDesign": "UI/UX Design",
+    "skillTools": "Tools & DevOps"
+  },
+  "projects": {
+    "title": "Progetti",
+    "subtitle": "Una selezione di progetti su cui ho lavorato, che spaziano da sistemi di design a piattaforme web complesse",
+    "viewProject": "Vedi Progetto",
+    "project1Title": "Design System Platform",
+    "project1Description": "Un sistema di design completo con componenti riutilizzabili, documentazione e strumenti per sviluppatori.",
+    "project2Title": "E-Commerce Dashboard",
+    "project2Description": "Dashboard amministrativa moderna per la gestione di negozi online con analisi in tempo reale.",
+    "project3Title": "Portfolio Builder",
+    "project3Description": "Piattaforma che permette ai creativi di creare portfolio personalizzati senza scrivere codice.",
+    "project4Title": "Task Management App",
+    "project4Description": "App di gestione progetti con funzionalità di collaborazione in tempo reale e integrazione Kanban.",
+    "project5Title": "Social Media Dashboard",
+    "project5Description": "Dashboard unificata per gestire più account social con analisi e pianificazione post.",
+    "project6Title": "Weather Forecast App",
+    "project6Description": "App meteo con visualizzazioni interattive e previsioni precise basate su località."
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Una panoramica completa degli strumenti e tecnologie che uso per dare vita alle idee",
+    "frontend": "Front-End Development",
+    "backend": "Back-End Development",
+    "databases": "Databases",
+    "tools": "Tools & Software",
+    "design": "Design & Other",
+    "cta": "Lavoriamo insieme",
+    "ctaDescription": "Sono sempre aperto a nuove opportunità e collaborazioni. Sentiti libero di contattarmi se vuoi lavorare insieme.",
+    "ctaButton": "Contattami"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Una collezione visiva di lavori creativi, esplorazioni e progetti. Clicca su qualsiasi immagine per vederla ingrandita.",
+    "close": "Chiudi"
+  },
+  "footer": {
+    "copyright": "Portfolio. Tutti i diritti riservati.",
+    "madeWith": "Realizzato con",
+    "using": "usando SvelteKit"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "project": "Project",
+    "skills": "Skills",
+    "gallery": "Gallery",
+    "privacy": "Privacy Policy"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "home": {
+    "badge1": "Once UI",
+    "badge2": "Featured work",
+    "title": "Building bridges between design and code",
+    "subtitle": "Designer and developer specialized in creating beautiful and functional digital experiences",
+    "aboutTitle": "Hey there! 👋",
+    "aboutText": "I'm a designer and developer with a passion for creating digital products that combine aesthetics and functionality.",
+    "featuredProjectTitle": "Once UI Design System",
+    "featuredProjectDescription": "A comprehensive design system built to streamline development and ensure consistency across projects.",
+    "moreWork": "More featured work",
+    "viewAll": "View all projects"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Designer and developer with a passion for creating exceptional digital experiences",
+    "location": "Milan, Italy",
+    "language": "English",
+    "navigation": "Navigation",
+    "introduction": "Introduction",
+    "workExperience": "Work Experience",
+    "studies": "Studies",
+    "technicalSkills": "Technical Skills",
+    "introTitle": "Hey there! 👋",
+    "introText1": "I'm a full-stack designer and developer with a passion for creating digital products that combine aesthetic beauty with robust functionality.",
+    "introText2": "With over 5 years of experience, I've worked on a wide range of projects, from innovative startups to large enterprises, always focusing on creating exceptional user experiences.",
+    "workTitle": "Work Experience",
+    "work1Title": "Senior Frontend Developer",
+    "work1Company": "Tech Company",
+    "work1Period": "2022 - Present",
+    "work1Description": "Developing modern web applications and scalable design systems.",
+    "work2Title": "Full Stack Developer",
+    "work2Company": "Digital Agency",
+    "work2Period": "2020 - 2022",
+    "work2Description": "Creating complete web solutions for international clients.",
+    "studiesTitle": "Education",
+    "study1Title": "Master in Computer Science",
+    "study1School": "University of Milan",
+    "study1Period": "2018 - 2020",
+    "study2Title": "Bachelor in Computer Science",
+    "study2School": "Polytechnic of Milan",
+    "study2Period": "2015 - 2018",
+    "skillsTitle": "Technical Skills",
+    "skillFrontend": "Front-End Development",
+    "skillBackend": "Back-End Development",
+    "skillDesign": "UI/UX Design",
+    "skillTools": "Tools & DevOps"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of projects I've worked on, ranging from design systems to complex web platforms",
+    "viewProject": "View Project",
+    "project1Title": "Design System Platform",
+    "project1Description": "A comprehensive design system with reusable components, documentation, and developer tools.",
+    "project2Title": "E-Commerce Dashboard",
+    "project2Description": "Modern admin dashboard for managing online stores with real-time analytics.",
+    "project3Title": "Portfolio Builder",
+    "project3Description": "Platform that allows creatives to build custom portfolios without writing code.",
+    "project4Title": "Task Management App",
+    "project4Description": "Project management app with real-time collaboration features and Kanban integration.",
+    "project5Title": "Social Media Dashboard",
+    "project5Description": "Unified dashboard to manage multiple social accounts with analytics and post scheduling.",
+    "project6Title": "Weather Forecast App",
+    "project6Description": "Weather app with interactive visualizations and accurate location-based forecasts."
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "A comprehensive overview of the tools and technologies I use to bring ideas to life",
+    "frontend": "Front-End Development",
+    "backend": "Back-End Development",
+    "databases": "Databases",
+    "tools": "Tools & Software",
+    "design": "Design & Other",
+    "cta": "Let's work together",
+    "ctaDescription": "I'm always open to new opportunities and collaborations. Feel free to reach out if you'd like to work together.",
+    "ctaButton": "Get in Touch"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "A visual collection of creative work, explorations, and projects. Click any image to view it larger.",
+    "close": "Close"
+  },
+  "footer": {
+    "copyright": "Portfolio. All rights reserved.",
+    "madeWith": "Made with",
+    "using": "using SvelteKit"
+  }
+}

@@ -2,35 +2,31 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Logo from '$lib/components/Logo.svelte';
-	import { onMount } from 'svelte';
+	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
+	import { t } from '$lib/stores/language';
 	import { Home, User, FolderOpen, Target, Image, Sun, Moon } from 'lucide-svelte';
 
 	let { children } = $props();
-	let currentTime = $state('');
+	let mobileMenuOpen = $state(false);
 
-	// Aggiorna l'orologio ogni secondo
-	onMount(() => {
-		const updateClock = () => {
-			const now = new Date();
-			currentTime = now.toLocaleTimeString('it-IT', {
-				hour: '2-digit',
-				minute: '2-digit',
-				second: '2-digit'
-			});
-		};
-		updateClock();
-		const interval = setInterval(updateClock, 1000);
-		return () => clearInterval(interval);
-	});
+	// Chiudi menu mobile
+	function closeMobileMenu() {
+		mobileMenuOpen = false;
+	}
+
+	// Toggle menu mobile
+	function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
 
 	const navItems = [
-		{ href: '/', label: 'Home', icon: Home },
-		{ href: '/about', label: 'About', icon: User },
-		{ href: '/project', label: 'Project', icon: FolderOpen },
-		{ href: '/skills', label: 'Skills', icon: Target },
-		{ href: '/gallery', label: 'Gallery', icon: Image }
+		{ href: '/', icon: Home },
+		{ href: '/about', icon: User },
+		{ href: '/project', icon: FolderOpen },
+		{ href: '/skills', icon: Target },
+		{ href: '/gallery', icon: Image }
 	];
 </script>
 
@@ -38,6 +34,8 @@
 	<link rel="icon" href={favicon} />
 	<title>Portfolio - Magic Design</title>
 	<meta name="description" content="Portfolio personale minimalista" />
+	<!-- Protezioni sicurezza -->
+	<script src="/secure.js"></script>
 	<!-- Local resources -->
 	<link rel="stylesheet" href="/fontawesome/css/all.min.css">
 	<style>
@@ -83,7 +81,7 @@
 					class="p-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
 					class:bg-white={$page.url.pathname === '/'}
 					class:dark:bg-gray-700={$page.url.pathname === '/'}
-					title="Home"
+					title={$t.nav.home}
 				>
 					<Home size={18} class="text-gray-700 dark:text-gray-300" />
 				</a>
@@ -99,7 +97,7 @@
 					class:dark:bg-gray-700={$page.url.pathname === '/about'}
 				>
 					<User size={16} class="text-gray-700 dark:text-gray-300" />
-					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">About</span>
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.about}</span>
 				</a>
 
 				<!-- Project - icona + testo -->
@@ -110,7 +108,7 @@
 					class:dark:bg-gray-700={$page.url.pathname === '/project'}
 				>
 					<FolderOpen size={16} class="text-gray-700 dark:text-gray-300" />
-					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">Project</span>
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.project}</span>
 				</a>
 
 				<!-- Skills - icona + testo -->
@@ -121,7 +119,7 @@
 					class:dark:bg-gray-700={$page.url.pathname === '/skills'}
 				>
 					<Target size={16} class="text-gray-700 dark:text-gray-300" />
-					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">Skills</span>
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.skills}</span>
 				</a>
 
 				<!-- Gallery - icona + testo -->
@@ -132,7 +130,7 @@
 					class:dark:bg-gray-700={$page.url.pathname === '/gallery'}
 				>
 					<Image size={16} class="text-gray-700 dark:text-gray-300" />
-					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">Gallery</span>
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.gallery}</span>
 				</a>
 
 				<!-- Separatore 2 -->
@@ -152,19 +150,16 @@
 				</button>
 			</div>
 
-			<!-- Orologio a destra -->
-			<div class="hidden sm:block text-sm font-mono text-gray-600 dark:text-gray-400 whitespace-nowrap tabular-nums">
-				{currentTime}
+			<!-- Selettore lingua a destra -->
+			<div class="hidden sm:block">
+				<LanguageSelector />
 			</div>
 
 			<!-- Menu mobile hamburger -->
 			<button
 				class="md:hidden p-2 rounded-full bg-gray-100 dark:bg-gray-800"
 				aria-label="Toggle mobile menu"
-				onclick={() => {
-					const menu = document.getElementById('mobile-menu');
-					menu?.classList.toggle('hidden');
-				}}
+				onclick={toggleMobileMenu}
 			>
 				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -173,35 +168,42 @@
 		</div>
 
 		<!-- Menu mobile -->
-		<div id="mobile-menu" class="hidden md:hidden mt-3 pb-2">
-			<div class="bg-gray-100/80 dark:bg-gray-800/80 rounded-2xl p-2 backdrop-blur-sm">
-				{#each navItems as item}
-					{@const IconComponent = item.icon}
-					<a
-						href={item.href}
-						class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
-						class:bg-white={$page.url.pathname === item.href}
-						class:dark:bg-gray-700={$page.url.pathname === item.href}
+		{#if mobileMenuOpen}
+			<div class="md:hidden mt-3 pb-2">
+				<div class="bg-gray-100/80 dark:bg-gray-800/80 rounded-2xl p-2 backdrop-blur-sm">
+					{#each navItems as item}
+						{@const IconComponent = item.icon}
+						{@const labelKey = item.href === '/' ? 'home' : item.href.substring(1)}
+						<a
+							href={item.href}
+							onclick={closeMobileMenu}
+							class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
+							class:bg-white={$page.url.pathname === item.href}
+							class:dark:bg-gray-700={$page.url.pathname === item.href}
+						>
+							<IconComponent size={18} class="text-gray-700 dark:text-gray-300" />
+							<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav[labelKey]}</span>
+						</a>
+					{/each}
+					<div class="border-t border-gray-300 dark:border-gray-600 my-2"></div>
+					<button
+						onclick={toggleTheme}
+						class="w-full flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
 					>
-						<IconComponent size={18} class="text-gray-700 dark:text-gray-300" />
-						<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{item.label}</span>
-					</a>
-				{/each}
-				<div class="border-t border-gray-300 dark:border-gray-600 my-2"></div>
-				<button
-					onclick={toggleTheme}
-					class="w-full flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
-				>
-					{#if $theme === 'light'}
-						<Moon size={18} class="text-gray-700" />
-						<span class="text-sm font-medium text-gray-700">Dark Mode</span>
-					{:else}
-						<Sun size={18} class="text-gray-300" />
-						<span class="text-sm font-medium text-gray-300">Light Mode</span>
-					{/if}
-				</button>
+						{#if $theme === 'light'}
+							<Moon size={18} class="text-gray-700" />
+							<span class="text-sm font-medium text-gray-700">{$t.theme.dark}</span>
+						{:else}
+							<Sun size={18} class="text-gray-300" />
+							<span class="text-sm font-medium text-gray-300">{$t.theme.light}</span>
+						{/if}
+					</button>
+					<div class="mt-2">
+						<LanguageSelector />
+					</div>
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 </nav>
 
@@ -216,7 +218,7 @@
 		<div class="flex flex-col md:flex-row justify-between items-center gap-6">
 			<!-- Left side - Copyright -->
 			<div class="text-sm text-gray-600 dark:text-gray-400">
-				© {new Date().getFullYear()} Portfolio. All rights reserved.
+				© {new Date().getFullYear()} {$t.footer.copyright}
 			</div>
 
 			<!-- Center - Social links -->
@@ -240,7 +242,7 @@
 
 			<!-- Right side - Made with -->
 			<div class="text-sm text-gray-600 dark:text-gray-400">
-				Made with <span class="text-red-500">♥</span> using SvelteKit
+				{$t.footer.madeWith} <span class="text-red-500">♥</span> {$t.footer.using}
 			</div>
 		</div>
 	</div>
