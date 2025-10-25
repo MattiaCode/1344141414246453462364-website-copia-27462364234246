@@ -223,73 +223,11 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-	<div class="max-w-7xl mx-auto px-6 sm:px-8 py-16">
-		<!-- Sezione superiore: Due colonne -->
-		<div class="grid md:grid-cols-2 gap-12 mb-16">
-			<!-- Colonna sinistra: Nome/Logo + Descrizione -->
-			<div class="text-center md:text-left">
-				<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-					{$t.footer.brandName}
-				</h3>
-				<p class="text-gray-600 dark:text-gray-400 leading-relaxed max-w-md mx-auto md:mx-0">
-					{$t.footer.brandDescription}
-				</p>
-			</div>
-
-			<!-- Colonna destra: Link di navigazione -->
-			<div class="text-center md:text-right">
-				<h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">
-					{$t.footer.navigation}
-				</h4>
-				<nav class="flex flex-col space-y-3">
-					<a
-						href="/"
-						class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.home}
-					</a>
-					<a
-						href="/about"
-						class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.about}
-					</a>
-					<a
-						href="/project"
-						class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.project}
-					</a>
-					<a
-						href="/skills"
-						class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.skills}
-					</a>
-					<a
-						href="/gallery"
-						class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.gallery}
-					</a>
-					<a
-						href="/privacy-policy"
-						class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.privacy}
-					</a>
-				</nav>
-			</div>
-		</div>
-
-		<!-- Sezione centrale: Certificato iubenda -->
-		<div class="flex justify-center mb-16">
-			<a
-				href="/iubenda-partner"
-				title="iubenda Certified Bronze Partner"
-				class="inline-block hover:opacity-90 transition-opacity duration-200"
-			>
+<footer class="border-t border-gray-200 dark:border-gray-800">
+	<div class="max-w-7xl mx-auto px-6 py-12">
+		<!-- Certificato iubenda -->
+		<div class="flex justify-center mb-8">
+			<a href="/iubenda-partner" class="inline-block hover:opacity-80 transition-opacity">
 				<img
 					src="https://www.iubenda.com/partner/bronze@2x.png"
 					alt="iubenda Certified Bronze Partner"
@@ -299,27 +237,14 @@
 			</a>
 		</div>
 
-		<!-- Sezione inferiore: Copyright + link Privacy/Termini -->
-		<div class="border-t border-gray-200 dark:border-gray-700 pt-8">
-			<div class="flex flex-col md:flex-row justify-center items-center gap-6 text-center">
-				<p class="text-sm text-gray-600 dark:text-gray-400">
-					{$t.footer.copyright}
-				</p>
-				<div class="flex items-center gap-6">
-					<a
-						href="/privacy-policy"
-						class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.nav.privacy}
-					</a>
-					<span class="text-gray-400 dark:text-gray-600">•</span>
-					<a
-						href="/terms"
-						class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-					>
-						{$t.footer.terms}
-					</a>
-				</div>
+		<!-- Copyright e link -->
+		<div class="text-center">
+			<div class="flex flex-wrap justify-center items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+				<span>© 2025 Portfolio</span>
+				<span>•</span>
+				<a href="/privacy-policy" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+					Privacy Policy
+				</a>
 			</div>
 		</div>
 	</div>

@@ -2,7 +2,6 @@
 	import { X } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import { t } from '$lib/stores/language';
-	import { addStaggerDelay } from '$lib/utils/scrollAnimations';
 
 	let selectedImage = $state<number | null>(null);
 
@@ -41,9 +40,6 @@
 	}
 
 	onMount(() => {
-		// Applica delay progressivo alle immagini
-		addStaggerDelay('.gallery-image', 60);
-
 		function handleKeydown(e: KeyboardEvent) {
 			if (selectedImage === null) return;
 
@@ -79,7 +75,7 @@
 			{#each galleryImages as image}
 				<button
 					onclick={() => openLightbox(image.id)}
-					class="group gallery-image scale-in relative block w-full break-inside-avoid mb-4"
+					class="group relative block w-full break-inside-avoid mb-4"
 				>
 					<img
 						src={image.url}

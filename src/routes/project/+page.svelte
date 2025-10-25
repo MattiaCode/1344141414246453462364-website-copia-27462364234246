@@ -2,8 +2,6 @@
 	import { ArrowRight } from 'lucide-svelte';
 	import { t } from '$lib/stores/language';
 	import { derived } from 'svelte/store';
-	import { onMount } from 'svelte';
-	import { addStaggerDelay } from '$lib/utils/scrollAnimations';
 
 	// Projects array che usa le traduzioni
 	const projects = derived(t, ($t) => [
@@ -62,11 +60,6 @@
 			link: '#'
 		}
 	]);
-
-	// Applica delay progressivo alle card progetti
-	onMount(() => {
-		addStaggerDelay('.project-card', 100);
-	});
 </script>
 
 <svelte:head>
@@ -89,7 +82,7 @@
 		<!-- Projects Grid -->
 		<div class="grid md:grid-cols-2 gap-x-8 gap-y-16 mb-20">
 			{#each $projects as project}
-				<article class="group project-card fade-in-up">
+				<article class="group">
 					<!-- Project Image -->
 					<a href={project.link} class="block mb-6 relative overflow-hidden rounded-2xl">
 						<div class="aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -132,7 +125,7 @@
 		</div>
 
 		<!-- CTA Section -->
-		<div class="text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50 fade-in">
+		<div class="text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50">
 			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
 				{$t.projects.ctaTitle}
 			</h2>

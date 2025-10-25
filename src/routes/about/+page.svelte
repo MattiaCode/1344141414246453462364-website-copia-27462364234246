@@ -130,7 +130,7 @@
 				</div>
 
 				<!-- Introduction -->
-				<section id="introduction" class="mb-16 scroll-mt-24 fade-in-up">
+				<section id="introduction" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">{$t.about.introduction}</h2>
 					<div class="prose prose-lg dark:prose-invert max-w-none">
 						<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
@@ -146,11 +146,11 @@
 				</section>
 
 				<!-- Work Experience -->
-				<section id="work-experience" class="mb-16 scroll-mt-24 fade-in-up">
+				<section id="work-experience" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.workExperience}</h2>
 					<div class="space-y-8">
 						<!-- Job 1 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in-up">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-4">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job1Title}</h3>
@@ -164,7 +164,7 @@
 						</div>
 
 						<!-- Job 2 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in-up">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-4">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job2Title}</h3>
@@ -178,7 +178,7 @@
 						</div>
 
 						<!-- Job 3 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in-up">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-4">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job3Title}</h3>
@@ -194,10 +194,10 @@
 				</section>
 
 				<!-- Studies -->
-				<section id="studies" class="mb-16 scroll-mt-24 fade-in-up">
+				<section id="studies" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
 					<div class="space-y-6">
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-2">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education1Title}</h3>
@@ -213,31 +213,31 @@
 				</section>
 
 				<!-- Technical Skills -->
-				<section id="technical-skills" class="mb-16 scroll-mt-24 fade-in-up">
+				<section id="technical-skills" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.technicalSkills}</h2>
 					<div class="grid sm:grid-cols-2 gap-6">
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsFrontend}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
 								{$t.about.skillsFrontendList}
 							</p>
 						</div>
 
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsDesign}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
 								{$t.about.skillsDesignList}
 							</p>
 						</div>
 
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsBackend}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
 								{$t.about.skillsBackendList}
 							</p>
 						</div>
 
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsTools}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
 								{$t.about.skillsToolsList}
