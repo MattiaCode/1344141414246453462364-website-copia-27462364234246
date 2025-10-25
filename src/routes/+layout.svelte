@@ -3,9 +3,11 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Logo from '$lib/components/Logo.svelte';
 	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { t } from '$lib/stores/language';
+	import { initScrollAnimations } from '$lib/utils/scrollAnimations';
 	import { Home, User, FolderOpen, Target, Image, Sun, Moon } from 'lucide-svelte';
 
 	let { children } = $props();
@@ -20,6 +22,14 @@
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 	}
+
+	// Inizializza animazioni scroll
+	onMount(() => {
+		const observer = initScrollAnimations();
+		return () => {
+			observer?.disconnect();
+		};
+	});
 
 	const navItems = [
 		{ href: '/', icon: Home },
