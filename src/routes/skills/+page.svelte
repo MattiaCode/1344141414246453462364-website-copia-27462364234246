@@ -1,5 +1,12 @@
 <script lang="ts">
 	import { t } from '$lib/stores/language';
+	import { onMount } from 'svelte';
+	import { addStaggerDelay } from '$lib/utils/scrollAnimations';
+
+	// Applica delay progressivo alle skill cards
+	onMount(() => {
+		addStaggerDelay('.skill-card', 80);
+	});
 
 	// Front-End skills
 	const frontendSkills = [
@@ -66,7 +73,7 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each frontendSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="group skill-card scale-in bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -89,7 +96,7 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each backendSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="group skill-card scale-in bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -112,7 +119,7 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each databaseSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="group skill-card scale-in bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -135,7 +142,7 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each toolsSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="group skill-card scale-in bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -158,7 +165,7 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each designSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="group skill-card scale-in bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}

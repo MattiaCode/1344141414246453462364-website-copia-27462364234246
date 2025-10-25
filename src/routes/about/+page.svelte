@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Mail, MapPin, Github, Linkedin, Calendar } from 'lucide-svelte';
+	import { t } from '$lib/stores/language';
 
 	let activeSection = $state('introduction');
 
@@ -32,22 +33,22 @@
 
 					<!-- Nome -->
 					<h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-2">
-						Selene Yu
+						{$t.about.name}
 					</h2>
 
 					<!-- Location -->
 					<div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
 						<MapPin size={16} />
-						<span>Asia/Jakarta</span>
+						<span>{$t.about.location}</span>
 					</div>
 
 					<!-- Bottoni lingua -->
 					<div class="flex gap-2 mb-8">
 						<button class="flex-1 px-3 py-2 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium">
-							English
+							{$t.about.languageEnglish}
 						</button>
 						<button class="flex-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-							Bahasa
+							{$t.about.languageBahasa}
 						</button>
 					</div>
 
@@ -61,7 +62,7 @@
 									: 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
 							}`}
 						>
-							Introduction
+							{$t.about.introduction}
 						</button>
 						<button
 							onclick={() => scrollToSection('work-experience')}
@@ -71,7 +72,7 @@
 									: 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
 							}`}
 						>
-							Work Experience
+							{$t.about.workExperience}
 						</button>
 						<button
 							onclick={() => scrollToSection('studies')}
@@ -81,7 +82,7 @@
 									: 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
 							}`}
 						>
-							Studies
+							{$t.about.studies}
 						</button>
 						<button
 							onclick={() => scrollToSection('technical-skills')}
@@ -91,7 +92,7 @@
 									: 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
 							}`}
 						>
-							Technical skills
+							{$t.about.technicalSkills}
 						</button>
 					</nav>
 				</div>
@@ -102,16 +103,16 @@
 				<!-- Header con titolo e CTA -->
 				<div class="mb-12">
 					<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-3">
-						Selene Yu
+						{$t.about.name}
 					</h1>
 					<p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
-						Design Engineer
+						{$t.about.role}
 					</p>
 
 					<!-- Bottone Schedule a call -->
 					<button class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:opacity-90 transition-opacity mb-6">
 						<Calendar size={18} />
-						Schedule a call
+						{$t.about.scheduleCall}
 					</button>
 
 					<!-- Social icons -->
@@ -129,117 +130,117 @@
 				</div>
 
 				<!-- Introduction -->
-				<section id="introduction" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Introduction</h2>
+				<section id="introduction" class="mb-16 scroll-mt-24 fade-in-up">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">{$t.about.introduction}</h2>
 					<div class="prose prose-lg dark:prose-invert max-w-none">
 						<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-							I'm a design engineer passionate about creating seamless experiences at the intersection of design and code. With over 5 years of experience, I've worked with startups and established companies to bring their digital visions to life.
+							{$t.about.introText1}
 						</p>
 						<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-							My approach combines technical expertise with a deep understanding of user experience. I believe that great design is not just about aesthetics—it's about creating intuitive, accessible solutions that solve real problems.
+							{$t.about.introText2}
 						</p>
 						<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-							Currently, I'm focused on building design systems and developer tools that empower teams to work more efficiently and create better products.
+							{$t.about.introText3}
 						</p>
 					</div>
 				</section>
 
 				<!-- Work Experience -->
-				<section id="work-experience" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Work Experience</h2>
+				<section id="work-experience" class="mb-16 scroll-mt-24 fade-in-up">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.workExperience}</h2>
 					<div class="space-y-8">
 						<!-- Job 1 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in-up">
 							<div class="flex items-start justify-between mb-4">
 								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">Senior Design Engineer</h3>
-									<p class="text-gray-600 dark:text-gray-400">Company Name</p>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job1Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.job1Company}</p>
 								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">2021 - Present</span>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.job1Period}</span>
 							</div>
 							<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-								Leading design engineering initiatives, building scalable design systems, and bridging the gap between design and development teams. Mentoring junior engineers and establishing best practices.
+								{$t.about.job1Description}
 							</p>
 						</div>
 
 						<!-- Job 2 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in-up">
 							<div class="flex items-start justify-between mb-4">
 								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">Design Engineer</h3>
-									<p class="text-gray-600 dark:text-gray-400">Previous Company</p>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job2Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.job2Company}</p>
 								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">2019 - 2021</span>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.job2Period}</span>
 							</div>
 							<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-								Developed component libraries and design systems. Collaborated with cross-functional teams to ship high-quality products. Improved developer experience through better tooling.
+								{$t.about.job2Description}
 							</p>
 						</div>
 
 						<!-- Job 3 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in-up">
 							<div class="flex items-start justify-between mb-4">
 								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">Frontend Developer</h3>
-									<p class="text-gray-600 dark:text-gray-400">Startup Inc.</p>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job3Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.job3Company}</p>
 								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">2018 - 2019</span>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.job3Period}</span>
 							</div>
 							<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-								Built responsive web applications using modern JavaScript frameworks. Worked closely with designers to implement pixel-perfect interfaces.
+								{$t.about.job3Description}
 							</p>
 						</div>
 					</div>
 				</section>
 
 				<!-- Studies -->
-				<section id="studies" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Studies</h2>
+				<section id="studies" class="mb-16 scroll-mt-24 fade-in-up">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
 					<div class="space-y-6">
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 fade-in">
 							<div class="flex items-start justify-between mb-2">
 								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">Bachelor of Computer Science</h3>
-									<p class="text-gray-600 dark:text-gray-400">University Name</p>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education1Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.education1School}</p>
 								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">2014 - 2018</span>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education1Period}</span>
 							</div>
 							<p class="text-gray-700 dark:text-gray-300">
-								Focus on Human-Computer Interaction and Software Engineering
+								{$t.about.education1Focus}
 							</p>
 						</div>
 					</div>
 				</section>
 
 				<!-- Technical Skills -->
-				<section id="technical-skills" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Technical skills</h2>
+				<section id="technical-skills" class="mb-16 scroll-mt-24 fade-in-up">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.technicalSkills}</h2>
 					<div class="grid sm:grid-cols-2 gap-6">
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Frontend</h3>
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsFrontend}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
-								React, Vue, Svelte, TypeScript, Next.js, TailwindCSS
+								{$t.about.skillsFrontendList}
 							</p>
 						</div>
 
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Design</h3>
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsDesign}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
-								Figma, Adobe XD, Design Systems, Prototyping, UI/UX
+								{$t.about.skillsDesignList}
 							</p>
 						</div>
 
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Backend</h3>
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsBackend}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
-								Node.js, Python, PostgreSQL, REST APIs, GraphQL
+								{$t.about.skillsBackendList}
 							</p>
 						</div>
 
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Tools</h3>
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 scale-in">
+							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsTools}</h3>
 							<p class="text-gray-700 dark:text-gray-300">
-								Git, Docker, AWS, Vercel, CI/CD, Testing Frameworks
+								{$t.about.skillsToolsList}
 							</p>
 						</div>
 					</div>

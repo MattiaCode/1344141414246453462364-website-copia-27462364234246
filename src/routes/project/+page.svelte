@@ -1,63 +1,72 @@
 <script lang="ts">
 	import { ArrowRight } from 'lucide-svelte';
 	import { t } from '$lib/stores/language';
+	import { derived } from 'svelte/store';
+	import { onMount } from 'svelte';
+	import { addStaggerDelay } from '$lib/utils/scrollAnimations';
 
-	const projects = [
+	// Projects array che usa le traduzioni
+	const projects = derived(t, ($t) => [
 		{
 			id: 1,
-			title: 'Design System Platform',
-			description: 'A comprehensive design system with documentation, components, and guidelines for building consistent digital products at scale.',
+			title: $t.projects.project1Title,
+			description: $t.projects.project1Description,
 			year: '2024',
-			category: 'Design System',
+			category: $t.projects.project1Category,
 			image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&h=600&fit=crop',
 			link: '#'
 		},
 		{
 			id: 2,
-			title: 'E-Commerce Dashboard',
-			description: 'Modern analytics dashboard for e-commerce platforms with real-time data visualization and insights.',
+			title: $t.projects.project2Title,
+			description: $t.projects.project2Description,
 			year: '2024',
-			category: 'Web Application',
+			category: $t.projects.project2Category,
 			image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
 			link: '#'
 		},
 		{
 			id: 3,
-			title: 'Social Media Platform',
-			description: 'Next-generation social platform focused on meaningful connections and community building.',
+			title: $t.projects.project3Title,
+			description: $t.projects.project3Description,
 			year: '2024',
-			category: 'Platform',
+			category: $t.projects.project3Category,
 			image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
 			link: '#'
 		},
 		{
 			id: 4,
-			title: 'Task Management App',
-			description: 'Collaborative task management with real-time updates, team features, and project tracking.',
+			title: $t.projects.project4Title,
+			description: $t.projects.project4Description,
 			year: '2023',
-			category: 'Productivity',
+			category: $t.projects.project4Category,
 			image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop',
 			link: '#'
 		},
 		{
 			id: 5,
-			title: 'Financial Dashboard',
-			description: 'Real-time financial tracking and analytics platform with advanced reporting capabilities.',
+			title: $t.projects.project5Title,
+			description: $t.projects.project5Description,
 			year: '2023',
-			category: 'Fintech',
+			category: $t.projects.project5Category,
 			image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
 			link: '#'
 		},
 		{
 			id: 6,
-			title: 'Health & Fitness App',
-			description: 'Personal health tracking application with workout plans, nutrition guides, and progress tracking.',
+			title: $t.projects.project6Title,
+			description: $t.projects.project6Description,
 			year: '2023',
-			category: 'Mobile App',
+			category: $t.projects.project6Category,
 			image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
 			link: '#'
 		}
-	];
+	]);
+
+	// Applica delay progressivo alle card progetti
+	onMount(() => {
+		addStaggerDelay('.project-card', 100);
+	});
 </script>
 
 <svelte:head>
@@ -79,8 +88,8 @@
 
 		<!-- Projects Grid -->
 		<div class="grid md:grid-cols-2 gap-x-8 gap-y-16 mb-20">
-			{#each projects as project}
-				<article class="group">
+			{#each $projects as project}
+				<article class="group project-card fade-in-up">
 					<!-- Project Image -->
 					<a href={project.link} class="block mb-6 relative overflow-hidden rounded-2xl">
 						<div class="aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -123,7 +132,7 @@
 		</div>
 
 		<!-- CTA Section -->
-		<div class="text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50">
+		<div class="text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50 fade-in">
 			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
 				{$t.projects.ctaTitle}
 			</h2>
