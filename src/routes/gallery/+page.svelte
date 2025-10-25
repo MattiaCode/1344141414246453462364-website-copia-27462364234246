@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { X } from 'lucide-svelte';
 	import { onMount } from 'svelte';
+	import { t } from '$lib/stores/language';
 
 	let selectedImage = $state<number | null>(null);
 
@@ -53,8 +54,8 @@
 </script>
 
 <svelte:head>
-	<title>Gallery - Portfolio</title>
-	<meta name="description" content="A visual showcase of creative work, designs, and projects" />
+	<title>{$t.gallery.title} - Portfolio</title>
+	<meta name="description" content="{$t.gallery.subtitle}" />
 </svelte:head>
 
 <div class="hero-gradient">
@@ -62,10 +63,10 @@
 		<!-- Header -->
 		<div class="mb-16">
 			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-				Gallery
+				{$t.gallery.title}
 			</h1>
 			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-				A visual collection of creative work, explorations, and projects. Click any image to view it larger.
+				{$t.gallery.subtitle}
 			</p>
 		</div>
 

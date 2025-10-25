@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { t } from '$lib/stores/language';
+
 	// Front-End skills
 	const frontendSkills = [
 		{ name: 'React', img: 'img/react.png' },
@@ -41,8 +43,8 @@
 </script>
 
 <svelte:head>
-	<title>Skills - Portfolio</title>
-	<meta name="description" content="Technical skills and technologies I work with" />
+	<title>{$t.skills.title} - Portfolio</title>
+	<meta name="description" content="{$t.skills.subtitle}" />
 </svelte:head>
 
 <div class="hero-gradient">
@@ -50,17 +52,17 @@
 		<!-- Header -->
 		<div class="mb-20 text-center">
 			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-				Skills & Technologies
+				{$t.skills.title}
 			</h1>
 			<p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-				A comprehensive overview of the tools and technologies I use to bring ideas to life
+				{$t.skills.subtitle}
 			</p>
 		</div>
 
 		<!-- Front-End Development -->
 		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-				Front-End Development
+				{$t.skills.frontend}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each frontendSkills as skill}
@@ -83,7 +85,7 @@
 		<!-- Back-End Development -->
 		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-				Back-End Development
+				{$t.skills.backend}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each backendSkills as skill}
@@ -106,7 +108,7 @@
 		<!-- Databases -->
 		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-				Databases
+				{$t.skills.databases}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each databaseSkills as skill}
@@ -129,7 +131,7 @@
 		<!-- Tools & Software -->
 		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-				Tools & Software
+				{$t.skills.tools}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each toolsSkills as skill}
@@ -152,7 +154,7 @@
 		<!-- Design & Other -->
 		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-				Design & Other
+				{$t.skills.design}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each designSkills as skill}

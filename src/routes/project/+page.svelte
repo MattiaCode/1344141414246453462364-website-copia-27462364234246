@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ArrowRight } from 'lucide-svelte';
+	import { t } from '$lib/stores/language';
 
 	const projects = [
 		{
@@ -60,8 +61,8 @@
 </script>
 
 <svelte:head>
-	<title>Work - Portfolio</title>
-	<meta name="description" content="Selected projects showcasing design and development work" />
+	<title>{$t.projects.title} - Portfolio</title>
+	<meta name="description" content="{$t.projects.subtitle}" />
 </svelte:head>
 
 <div class="hero-gradient">
@@ -69,10 +70,10 @@
 		<!-- Header -->
 		<div class="mb-16">
 			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-				Work
+				{$t.projects.title}
 			</h1>
 			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-				A selection of projects showcasing design systems, web applications, and digital experiences I've built over the years.
+				{$t.projects.subtitle}
 			</p>
 		</div>
 
@@ -114,7 +115,7 @@
 						href={project.link}
 						class="inline-flex items-center gap-2 text-gray-900 dark:text-white font-medium hover:gap-3 transition-all"
 					>
-						<span>Read case study</span>
+						<span>{$t.projects.readCaseStudy}</span>
 						<ArrowRight size={18} />
 					</a>
 				</article>
@@ -124,16 +125,16 @@
 		<!-- CTA Section -->
 		<div class="text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50">
 			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-				Interested in working together?
+				{$t.projects.ctaTitle}
 			</h2>
 			<p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-				I'm always open to discussing new projects, creative ideas, and opportunities to bring your vision to life.
+				{$t.projects.ctaDescription}
 			</p>
 			<a
 				href="/about"
 				class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:opacity-90 transition-opacity"
 			>
-				Get in Touch
+				{$t.projects.ctaButton}
 				<ArrowRight size={18} />
 			</a>
 		</div>

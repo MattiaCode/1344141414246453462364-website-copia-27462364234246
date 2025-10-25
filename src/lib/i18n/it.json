@@ -1,10 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
-    "project": "Project",
-    "skills": "Skills",
-    "gallery": "Gallery",
+    "about": "Chi Sono",
+    "project": "Progetti",
+    "skills": "Competenze",
+    "gallery": "Galleria",
     "privacy": "Privacy Policy"
   },
   "theme": {
@@ -15,12 +15,14 @@
     "badge1": "Once UI",
     "badge2": "Featured work",
     "title": "Costruire ponti tra design e codice",
-    "subtitle": "Designer e sviluppatore specializzato nella creazione di esperienze digitali bellissime e funzionali",
-    "aboutTitle": "Ciao! 👋",
-    "aboutText": "Sono un designer e sviluppatore con passione per la creazione di prodotti digitali che combinano estetica e funzionalità.",
-    "featuredProjectTitle": "Once UI Design System",
-    "featuredProjectDescription": "Un sistema di design completo creato per semplificare lo sviluppo e garantire coerenza tra progetti.",
-    "moreWork": "Altri progetti in evidenza",
+    "subtitle": "Sono un design engineer, dove creo esperienze utente intuitive. Dopo l'orario di lavoro, costruisco i miei progetti personali.",
+    "aboutLabel": "Chi Sono",
+    "aboutName": "Il Tuo Nome",
+    "featuredYear": "2024",
+    "featuredCategory": "Sistema di Design",
+    "featuredTitle": "Sistema di Design Creativo",
+    "featuredDescription": "Un sistema di design completo costruito per colmare il divario tra design e sviluppo, con componenti riutilizzabili e documentazione chiara.",
+    "moreWork": "Altri lavori in evidenza",
     "viewAll": "Vedi tutti i progetti"
   },
   "about": {
@@ -59,21 +61,12 @@
     "skillTools": "Tools & DevOps"
   },
   "projects": {
-    "title": "Progetti",
-    "subtitle": "Una selezione di progetti su cui ho lavorato, che spaziano da sistemi di design a piattaforme web complesse",
-    "viewProject": "Vedi Progetto",
-    "project1Title": "Design System Platform",
-    "project1Description": "Un sistema di design completo con componenti riutilizzabili, documentazione e strumenti per sviluppatori.",
-    "project2Title": "E-Commerce Dashboard",
-    "project2Description": "Dashboard amministrativa moderna per la gestione di negozi online con analisi in tempo reale.",
-    "project3Title": "Portfolio Builder",
-    "project3Description": "Piattaforma che permette ai creativi di creare portfolio personalizzati senza scrivere codice.",
-    "project4Title": "Task Management App",
-    "project4Description": "App di gestione progetti con funzionalità di collaborazione in tempo reale e integrazione Kanban.",
-    "project5Title": "Social Media Dashboard",
-    "project5Description": "Dashboard unificata per gestire più account social con analisi e pianificazione post.",
-    "project6Title": "Weather Forecast App",
-    "project6Description": "App meteo con visualizzazioni interattive e previsioni precise basate su località."
+    "title": "Lavori",
+    "subtitle": "Una selezione di progetti che mostrano sistemi di design, applicazioni web ed esperienze digitali che ho costruito negli anni.",
+    "readCaseStudy": "Leggi il caso studio",
+    "ctaTitle": "Interessato a lavorare insieme?",
+    "ctaDescription": "Sono sempre aperto a discutere di nuovi progetti, idee creative e opportunità per dare vita alla tua visione.",
+    "ctaButton": "Mettiti in contatto"
   },
   "skills": {
     "title": "Skills & Technologies",

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { ArrowRight } from 'lucide-svelte';
+	import { t } from '$lib/stores/language';
 </script>
 
 <svelte:head>
 	<title>Portfolio - Creative Developer</title>
-	<meta name="description" content="Building bridges between design and code" />
+	<meta name="description" content="{$t.home.title}" />
 </svelte:head>
 
 <!-- Hero Section -->
@@ -14,21 +15,21 @@
 			<!-- Badge pills PICCOLI in alto -->
 			<div class="flex items-center justify-center gap-2 mb-6">
 				<div class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-xs font-medium text-blue-700 dark:text-blue-300">
-					Once UI
+					{$t.home.badge1}
 				</div>
 				<div class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-xs font-medium text-blue-700 dark:text-blue-300">
-					Featured work
+					{$t.home.badge2}
 				</div>
 			</div>
 
 			<!-- Titolo NORMALE (NON gigante!) -->
 			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-				Building bridges between design and code
+				{$t.home.title}
 			</h1>
 
 			<!-- Sottotitolo grigio NORMALE -->
 			<p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-				I'm Selene, a design engineer at FjordNet, where I craft intuitive user experiences. After hours, I build my own projects.
+				{$t.home.subtitle}
 			</p>
 
 			<!-- Card profilo PICCOLA -->
@@ -39,9 +40,9 @@
 				</div>
 				<!-- Testo piccolo -->
 				<div class="flex items-center gap-1.5 text-sm">
-					<span class="text-gray-600 dark:text-gray-400">About</span>
+					<span class="text-gray-600 dark:text-gray-400">{$t.home.aboutLabel}</span>
 					<span class="text-gray-400">–</span>
-					<span class="font-semibold text-gray-900 dark:text-white">Selene Yu</span>
+					<span class="font-semibold text-gray-900 dark:text-white">{$t.home.aboutName}</span>
 				</div>
 				<!-- Arrow piccola -->
 				<ArrowRight size={14} class="text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 group-hover:translate-x-0.5 transition-all" />
@@ -57,7 +58,7 @@
 		<div class="aspect-[16/9] rounded-3xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800 shadow-lg">
 			<img
 				src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=1200&h=675&fit=crop"
-				alt="Featured Project"
+				alt={$t.home.featuredTitle}
 				class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
 				loading="lazy"
 			/>
@@ -65,62 +66,15 @@
 
 		<!-- Info progetto -->
 		<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
-			<span>2024</span>
+			<span>{$t.home.featuredYear}</span>
 			<span>·</span>
-			<span>Design System</span>
+			<span>{$t.home.featuredCategory}</span>
 		</div>
 		<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
-			Creative Design System
+			{$t.home.featuredTitle}
 		</h2>
 		<p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-			A comprehensive design system built to bridge the gap between design and development, featuring reusable components and clear documentation.
+			{$t.home.featuredDescription}
 		</p>
 	</a>
-</div>
-
-<!-- More Featured Work -->
-<div class="max-w-6xl mx-auto px-6 sm:px-8 pb-32">
-	<div class="mb-12">
-		<h2 class="text-3xl font-bold text-gray-900 dark:text-white">More featured work</h2>
-	</div>
-
-	<div class="grid md:grid-cols-2 gap-8">
-		<!-- Project Card 1 -->
-		<a href="/project" class="group block">
-			<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800">
-				<img
-					src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-					alt="Product Launch Platform"
-					class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-					loading="lazy"
-				/>
-			</div>
-			<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
-				<span>2024</span>
-				<span>·</span>
-				<span>Web Application</span>
-			</div>
-			<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Product Launch Platform</h3>
-			<p class="text-gray-700 dark:text-gray-300">End-to-end product strategy and visual identity for modern launches.</p>
-		</a>
-
-		<!-- Project Card 2 -->
-		<a href="/project" class="group block">
-			<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800">
-				<img
-					src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
-					alt="Innovation Hub"
-					class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-					loading="lazy"
-				/>
-			</div>
-			<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
-				<span>2023</span>
-				<span>·</span>
-				<span>Platform</span>
-			</div>
-			<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Innovation Hub</h3>
-			<p class="text-gray-700 dark:text-gray-300">Platform connecting ideas with execution through collaborative tools.</p>
-		</a>
-	</div>
 </div>
