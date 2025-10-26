@@ -78,3 +78,66 @@
 		</p>
 	</a>
 </div>
+
+<!-- More Featured Work -->
+<div class="max-w-6xl mx-auto px-6 sm:px-8 pb-32">
+	<div class="mb-12">
+		<h2 class="text-3xl font-bold text-gray-900 dark:text-white">{$t.home.moreWork}</h2>
+	</div>
+
+	<div class="grid md:grid-cols-2 gap-8">
+		<!-- Project Card 1 -->
+		<a href="/project" class="group block">
+			<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800">
+				<img
+					src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+					alt="Financial Dashboard"
+					class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+					loading="lazy"
+				/>
+			</div>
+			<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
+				<span>2024</span>
+				<span>·</span>
+				<span>Product</span>
+			</div>
+			<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+				Financial Dashboard
+			</h3>
+			<p class="text-gray-700 dark:text-gray-300">
+				Real-time analytics platform for financial data visualization and reporting.
+			</p>
+		</a>
+
+		<!-- Project Card 2 -->
+		<a href="/project" class="group block">
+			<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800">
+				<img
+					src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+					alt="E-Commerce Platform"
+					class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+					loading="lazy"
+				/>
+			</div>
+			<div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
+				<span>2023</span>
+				<span>·</span>
+				<span>Web App</span>
+			</div>
+			<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+				E-Commerce Platform
+			</h3>
+			<p class="text-gray-700 dark:text-gray-300">
+				Modern e-commerce solution with seamless checkout experience.
+			</p>
+		</a>
+	</div>
+
+	<!-- View all projects link -->
+	<div class="text-center mt-12">
+		<a href="/project" class="inline-flex items-center gap-2 text-gray-900 dark:text-white font-medium hover:gap-3 transition-all">
+			<span>{$t.home.viewAll}</span>
+			<ArrowRight size={18} />
+		</a>
+	</div>
+</div>
