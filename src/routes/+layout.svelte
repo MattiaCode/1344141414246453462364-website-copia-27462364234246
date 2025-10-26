@@ -224,9 +224,61 @@
 
 <!-- Footer -->
 <footer class="border-t border-gray-200 dark:border-gray-800">
-	<div class="max-w-7xl mx-auto px-6 py-12">
+	<div class="max-w-7xl mx-auto px-6 py-16">
+		<!-- Top section: Info + Links -->
+		<div class="grid md:grid-cols-3 gap-12 mb-12">
+			<!-- Logo e descrizione -->
+			<div>
+				<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+					Portfolio
+				</h3>
+				<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+					Design engineer specializzato nella creazione di esperienze digitali eleganti e funzionali.
+				</p>
+			</div>
+
+			<!-- Link navigazione -->
+			<div>
+				<h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3 uppercase tracking-wider">
+					Navigazione
+				</h4>
+				<div class="space-y-2">
+					<a href="/" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						{$t.nav.home}
+					</a>
+					<a href="/about" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						{$t.nav.about}
+					</a>
+					<a href="/project" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						{$t.nav.project}
+					</a>
+					<a href="/skills" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						{$t.nav.skills}
+					</a>
+					<a href="/gallery" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						{$t.nav.gallery}
+					</a>
+				</div>
+			</div>
+
+			<!-- Link legali -->
+			<div>
+				<h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3 uppercase tracking-wider">
+					Legale
+				</h4>
+				<div class="space-y-2">
+					<a href="/privacy-policy" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						Privacy Policy
+					</a>
+					<a href="/iubenda-partner" class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+						Partner iubenda
+					</a>
+				</div>
+			</div>
+		</div>
+
 		<!-- Certificato iubenda -->
-		<div class="flex justify-center mb-8">
+		<div class="flex justify-center mb-10">
 			<a href="/iubenda-partner" class="inline-block hover:opacity-80 transition-opacity">
 				<img
 					src="https://www.iubenda.com/partner/bronze@2x.png"
@@ -237,15 +289,11 @@
 			</a>
 		</div>
 
-		<!-- Copyright e link -->
-		<div class="text-center">
-			<div class="flex flex-wrap justify-center items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-				<span>© 2025 Portfolio</span>
-				<span>•</span>
-				<a href="/privacy-policy" class="hover:text-gray-900 dark:hover:text-white transition-colors">
-					Privacy Policy
-				</a>
-			</div>
+		<!-- Bottom bar: Copyright -->
+		<div class="border-t border-gray-200 dark:border-gray-800 pt-8">
+			<p class="text-center text-sm text-gray-600 dark:text-gray-400">
+				© 2025 Portfolio. Tutti i diritti riservati.
+			</p>
 		</div>
 	</div>
 </footer>
