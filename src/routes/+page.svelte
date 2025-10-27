@@ -10,7 +10,7 @@
 
 <!-- Hero Section -->
 <div class="hero-gradient">
-	<div class="flex flex-col items-center justify-center px-6 sm:px-8 pt-12 pb-16">
+	<div class="flex flex-col items-center justify-center px-4 pt-12 pb-16">
 		<div class="max-w-4xl w-full mx-auto text-center">
 			<!-- Badge pills PICCOLI in alto -->
 			<div class="flex items-center justify-center gap-2 mb-6">
@@ -52,7 +52,7 @@
 </div>
 
 <!-- Featured Work Section - GRANDE CARD SOTTO -->
-<div class="max-w-6xl mx-auto px-6 sm:px-8 pb-20">
+<div class="max-w-6xl mx-auto px-4 pb-20">
 	<a href="/project" class="group block">
 		<!-- Grande immagine featured project -->
 		<div class="aspect-[16/9] rounded-3xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800 shadow-lg">
@@ -80,7 +80,7 @@
 </div>
 
 <!-- More Featured Work -->
-<div class="max-w-6xl mx-auto px-6 sm:px-8 pb-32">
+<div class="max-w-6xl mx-auto px-4 pb-32">
 	<div class="mb-12">
 		<h2 class="text-3xl font-bold text-gray-900 dark:text-white">{$t.home.moreWork}</h2>
 	</div>

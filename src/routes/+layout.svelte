@@ -78,7 +78,7 @@
 
 <!-- Navbar -->
 <nav class="fixed top-0 left-0 right-0 z-50">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+	<div class="max-w-7xl mx-auto px-4 py-3">
 		<div class="flex items-center justify-between gap-4">
 			<!-- Logo a sinistra -->
 			<Logo class="flex-shrink-0" />
@@ -224,7 +224,7 @@
 
 <!-- Footer -->
 <footer class="border-t border-gray-200 dark:border-gray-800">
-	<div class="max-w-7xl mx-auto px-6 py-16">
+	<div class="max-w-7xl mx-auto px-4 py-16">
 		<div class="max-w-2xl mx-auto">
 			<!-- Top: Logo e descrizione -->
 			<div class="text-center mb-12">

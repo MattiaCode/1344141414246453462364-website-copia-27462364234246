@@ -19,7 +19,7 @@
 </svelte:head>
 
 <div class="hero-gradient min-h-screen">
-	<div class="max-w-7xl mx-auto px-6 sm:px-8 py-20">
+	<div class="max-w-7xl mx-auto px-4 py-20">
 		<div class="flex flex-col lg:flex-row gap-12">
 			<!-- SIDEBAR SINISTRA - Fissa su desktop -->
 			<aside class="lg:w-80 lg:sticky lg:top-24 lg:self-start flex-shrink-0">

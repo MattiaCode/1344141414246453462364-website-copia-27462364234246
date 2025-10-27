@@ -68,7 +68,7 @@
 </svelte:head>
 
 <div class="hero-gradient">
-	<div class="max-w-7xl mx-auto px-6 sm:px-8 py-20">
+	<div class="max-w-7xl mx-auto px-4 py-20">
 		<!-- Header -->
 		<div class="mb-16">
 			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
