@@ -12,15 +12,6 @@
 <div class="hero-gradient">
 	<div class="flex flex-col items-center justify-center px-4 pt-12 pb-16">
 		<div class="max-w-4xl w-full mx-auto text-center">
-			<!-- Badge pills PICCOLI in alto -->
-			<div class="flex items-center justify-center gap-2 mb-6">
-				<div class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-xs font-medium text-blue-700 dark:text-blue-300">
-					{$t.home.badge1}
-				</div>
-				<div class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-xs font-medium text-blue-700 dark:text-blue-300">
-					{$t.home.badge2}
-				</div>
-			</div>
 
 			<!-- Titolo NORMALE (NON gigante!) -->
 			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
