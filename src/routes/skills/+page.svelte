@@ -3,9 +3,9 @@
 
 	// Frontend frameworks & libraries
 	import reactImg from '$lib/assets/skill/react.webp';
-	import svelteImg from '$lib/assets/skill/svelte.webp';
-	import nextjsImg from '$lib/assets/skill/nextjs.webp';
-	import viteImg from '$lib/assets/skill/vite.webp';
+	// import svelteImg from '$lib/assets/skill/svelte.webp'; // TODO: aggiungi immagine
+	// import nextjsImg from '$lib/assets/skill/nextjs.webp'; // TODO: aggiungi immagine
+	// import viteImg from '$lib/assets/skill/vite.webp'; // TODO: aggiungi immagine
 	import htmlImg from '$lib/assets/skill/html.webp';
 	import cssImg from '$lib/assets/skill/css.webp';
 	import tailwindImg from '$lib/assets/skill/Tailwind_CSS_Logo.webp';
@@ -15,42 +15,42 @@
 
 	// Backend & CMS
 	import nodejsImg from '$lib/assets/skill/node-js.webp';
-	import bunImg from '$lib/assets/skill/bun.webp';
+	// import bunImg from '$lib/assets/skill/bun.webp'; // TODO: aggiungi immagine
 	import phpImg from '$lib/assets/skill/PHP-logo.webp';
 	import wordpressImg from '$lib/assets/skill/Wordpress.webp';
-	import joomlaImg from '$lib/assets/skill/joomla.webp';
+	// import joomlaImg from '$lib/assets/skill/joomla.webp'; // TODO: aggiungi immagine
 
 	// Database
 	import mysqlImg from '$lib/assets/skill/mysql.webp';
 	import firebaseImg from '$lib/assets/skill/Firebase.webp';
 
 	// Programming Languages
-	import luaImg from '$lib/assets/skill/lua.webp';
-	import cImg from '$lib/assets/skill/c.webp';
-	import csharpImg from '$lib/assets/skill/csharp.webp';
+	// import luaImg from '$lib/assets/skill/lua.webp'; // TODO: aggiungi immagine
+	// import cImg from '$lib/assets/skill/c.webp'; // TODO: aggiungi immagine
+	// import csharpImg from '$lib/assets/skill/csharp.webp'; // TODO: aggiungi immagine
 
 	// Tools & Software
 	import gitImg from '$lib/assets/skill/Git.webp';
 	import jsonImg from '$lib/assets/skill/Json.webp';
-	import visualstudioImg from '$lib/assets/skill/visualstudio.webp';
-	import npmImg from '$lib/assets/skill/npm.webp';
-	import manictimeImg from '$lib/assets/skill/manictime.webp';
-	import keeperImg from '$lib/assets/skill/keeper.webp';
-	import onedriveImg from '$lib/assets/skill/onedrive.webp';
-	import dockerImg from '$lib/assets/skill/docker.webp';
+	// import visualstudioImg from '$lib/assets/skill/visualstudio.webp'; // TODO: aggiungi immagine
+	// import npmImg from '$lib/assets/skill/npm.webp'; // TODO: aggiungi immagine
+	// import manictimeImg from '$lib/assets/skill/manictime.webp'; // TODO: aggiungi immagine
+	// import keeperImg from '$lib/assets/skill/keeper.webp'; // TODO: aggiungi immagine
+	// import onedriveImg from '$lib/assets/skill/onedrive.webp'; // TODO: aggiungi immagine
+	// import dockerImg from '$lib/assets/skill/docker.webp'; // TODO: aggiungi immagine
 	import elementorImg from '$lib/assets/skill/elementor.webp';
 
 	// Cloud & Services
-	import vercelImg from '$lib/assets/skill/vercel.webp';
-	import cloudflareImg from '$lib/assets/skill/cloudflare.webp';
+	// import vercelImg from '$lib/assets/skill/vercel.webp'; // TODO: aggiungi immagine
+	// import cloudflareImg from '$lib/assets/skill/cloudflare.webp'; // TODO: aggiungi immagine
 	import stripeImg from '$lib/assets/skill/stripe.webp';
-	import emailjsImg from '$lib/assets/skill/emailjs.webp';
+	// import emailjsImg from '$lib/assets/skill/emailjs.webp'; // TODO: aggiungi immagine
 	import localImg from '$lib/assets/skill/local.webp';
 
 	// Privacy & Accessibility
-	import iubendaImg from '$lib/assets/skill/iubenda.webp';
-	import cookiebotImg from '$lib/assets/skill/cookiebot.webp';
-	import accessiwayImg from '$lib/assets/skill/accessiway.webp';
+	// import iubendaImg from '$lib/assets/skill/iubenda.webp'; // TODO: aggiungi immagine
+	// import cookiebotImg from '$lib/assets/skill/cookiebot.webp'; // TODO: aggiungi immagine
+	// import accessiwayImg from '$lib/assets/skill/accessiway.webp'; // TODO: aggiungi immagine
 	import recaptchaImg from '$lib/assets/skill/ReCAPTCHA.webp';
 
 	// AI & Assistants
@@ -60,9 +60,9 @@
 	// Front-End Development
 	const frontendSkills = [
 		{ name: 'React', img: reactImg },
-		{ name: 'Svelte', img: svelteImg },
-		{ name: 'Next.js', img: nextjsImg },
-		{ name: 'Vite', img: viteImg },
+		// { name: 'Svelte', img: svelteImg }, // TODO: aggiungi immagine svelte.webp
+		// { name: 'Next.js', img: nextjsImg }, // TODO: aggiungi immagine nextjs.webp
+		// { name: 'Vite', img: viteImg }, // TODO: aggiungi immagine vite.webp
 		{ name: 'HTML', img: htmlImg },
 		{ name: 'CSS', img: cssImg },
 		{ name: 'Tailwind CSS', img: tailwindImg },
@@ -74,10 +74,10 @@
 	// Back-End & CMS
 	const backendSkills = [
 		{ name: 'Node.js', img: nodejsImg },
-		{ name: 'Bun', img: bunImg },
+		// { name: 'Bun', img: bunImg }, // TODO: aggiungi immagine bun.webp
 		{ name: 'PHP', img: phpImg },
-		{ name: 'WordPress', img: wordpressImg },
-		{ name: 'Joomla', img: joomlaImg }
+		{ name: 'WordPress', img: wordpressImg }
+		// { name: 'Joomla', img: joomlaImg } // TODO: aggiungi immagine joomla.webp
 	];
 
 	// Database
@@ -86,40 +86,40 @@
 		{ name: 'Firebase', img: firebaseImg }
 	];
 
-	// Programming Languages
-	const programmingSkills = [
-		{ name: 'C', img: cImg },
-		{ name: 'C#', img: csharpImg },
-		{ name: 'Lua', img: luaImg }
-	];
+	// Programming Languages (TUTTE COMMENTATE - aggiungi le immagini prima)
+	// const programmingSkills = [
+	// 	{ name: 'C', img: cImg }, // TODO: aggiungi immagine c.webp
+	// 	{ name: 'C#', img: csharpImg }, // TODO: aggiungi immagine csharp.webp
+	// 	{ name: 'Lua', img: luaImg } // TODO: aggiungi immagine lua.webp
+	// ];
 
 	// Tools & Software
 	const toolsSkills = [
 		{ name: 'Git', img: gitImg },
-		{ name: 'Visual Studio', img: visualstudioImg },
-		{ name: 'npm', img: npmImg },
-		{ name: 'Docker', img: dockerImg },
+		// { name: 'Visual Studio', img: visualstudioImg }, // TODO: aggiungi immagine visualstudio.webp
+		// { name: 'npm', img: npmImg }, // TODO: aggiungi immagine npm.webp
+		// { name: 'Docker', img: dockerImg }, // TODO: aggiungi immagine docker.webp
 		{ name: 'JSON', img: jsonImg },
-		{ name: 'ManicTime', img: manictimeImg },
-		{ name: 'Keeper', img: keeperImg },
-		{ name: 'OneDrive', img: onedriveImg },
+		// { name: 'ManicTime', img: manictimeImg }, // TODO: aggiungi immagine manictime.webp
+		// { name: 'Keeper', img: keeperImg }, // TODO: aggiungi immagine keeper.webp
+		// { name: 'OneDrive', img: onedriveImg }, // TODO: aggiungi immagine onedrive.webp
 		{ name: 'Elementor', img: elementorImg }
 	];
 
 	// Cloud & Services
 	const cloudSkills = [
-		{ name: 'Vercel', img: vercelImg },
-		{ name: 'Cloudflare', img: cloudflareImg },
+		// { name: 'Vercel', img: vercelImg }, // TODO: aggiungi immagine vercel.webp
+		// { name: 'Cloudflare', img: cloudflareImg }, // TODO: aggiungi immagine cloudflare.webp
 		{ name: 'Stripe', img: stripeImg },
-		{ name: 'EmailJS', img: emailjsImg },
+		// { name: 'EmailJS', img: emailjsImg }, // TODO: aggiungi immagine emailjs.webp
 		{ name: 'Local', img: localImg }
 	];
 
 	// Privacy & Accessibility
 	const privacySkills = [
-		{ name: 'Iubenda', img: iubendaImg },
-		{ name: 'Cookiebot', img: cookiebotImg },
-		{ name: 'accessiWay', img: accessiwayImg },
+		// { name: 'Iubenda', img: iubendaImg }, // TODO: aggiungi immagine iubenda.webp
+		// { name: 'Cookiebot', img: cookiebotImg }, // TODO: aggiungi immagine cookiebot.webp
+		// { name: 'accessiWay', img: accessiwayImg }, // TODO: aggiungi immagine accessiway.webp
 		{ name: 'reCAPTCHA', img: recaptchaImg }
 	];
 
@@ -216,8 +216,8 @@
 			</div>
 		</section>
 
-		<!-- Programming Languages -->
-		<section class="mb-20">
+		<!-- Programming Languages - COMMENTATA finché non aggiungi le immagini -->
+		<!-- <section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Programming Languages
 			</h2>
@@ -237,7 +237,7 @@
 					</div>
 				{/each}
 			</div>
-		</section>
+		</section> -->
 
 		<!-- Tools & Software -->
 		<section class="mb-20">
