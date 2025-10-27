@@ -3,7 +3,7 @@
 
 	// Front-End skills
 	const frontendSkills = [
-		{ name: 'React', img: 'img/react.png' },
+		{ name: 'React', img: '$lib/assets/skill/react.webp' },
 		{ name: 'Vue', img: 'img/vue.png' },
 		{ name: 'HTML', img: 'img/html.png' },
 		{ name: 'CSS', img: 'img/css.png' },
