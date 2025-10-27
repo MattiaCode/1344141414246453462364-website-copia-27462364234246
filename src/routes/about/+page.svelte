@@ -44,11 +44,11 @@
 
 					<!-- Bottoni lingua -->
 					<div class="flex gap-2 mb-8">
-						<button class="flex-1 px-3 py-2 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium">
-							{$t.about.languageEnglish}
+						<button class="flex-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+							{$t.about.languageItalian}
 						</button>
 						<button class="flex-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-							{$t.about.languageBahasa}
+							{$t.about.languageEnglish}
 						</button>
 					</div>
 
@@ -84,16 +84,6 @@
 						>
 							{$t.about.studies}
 						</button>
-						<button
-							onclick={() => scrollToSection('technical-skills')}
-							class={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-								activeSection === 'technical-skills'
-									? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white'
-									: 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-							}`}
-						>
-							{$t.about.technicalSkills}
-						</button>
 					</nav>
 				</div>
 			</aside>
@@ -109,15 +99,9 @@
 						{$t.about.role}
 					</p>
 
-					<!-- Bottone Schedule a call -->
-					<button class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium hover:opacity-90 transition-opacity mb-6">
-						<Calendar size={18} />
-						{$t.about.scheduleCall}
-					</button>
-
 					<!-- Social icons -->
 					<div class="flex items-center gap-4">
-						<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+						<a href="https://github.com/MattiaCode-IT" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
 							<Github size={20} class="text-gray-700 dark:text-gray-300" />
 						</a>
 						<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
@@ -207,40 +191,6 @@
 							</div>
 							<p class="text-gray-700 dark:text-gray-300">
 								{$t.about.education1Focus}
-							</p>
-						</div>
-					</div>
-				</section>
-
-				<!-- Technical Skills -->
-				<section id="technical-skills" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.technicalSkills}</h2>
-					<div class="grid sm:grid-cols-2 gap-6">
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsFrontend}</h3>
-							<p class="text-gray-700 dark:text-gray-300">
-								{$t.about.skillsFrontendList}
-							</p>
-						</div>
-
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsDesign}</h3>
-							<p class="text-gray-700 dark:text-gray-300">
-								{$t.about.skillsDesignList}
-							</p>
-						</div>
-
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsBackend}</h3>
-							<p class="text-gray-700 dark:text-gray-300">
-								{$t.about.skillsBackendList}
-							</p>
-						</div>
-
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">{$t.about.skillsTools}</h3>
-							<p class="text-gray-700 dark:text-gray-300">
-								{$t.about.skillsToolsList}
 							</p>
 						</div>
 					</div>
