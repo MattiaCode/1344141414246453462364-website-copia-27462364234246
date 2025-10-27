@@ -1,44 +1,70 @@
 <script lang="ts">
 	import { t } from '$lib/stores/language';
 
+	// Import skill images from assets (using actual filenames)
+	import reactImg from '$lib/assets/skill/react.webp';
+	import htmlImg from '$lib/assets/skill/html.webp';
+	import cssImg from '$lib/assets/skill/css.webp';
+	import tailwindImg from '$lib/assets/skill/Tailwind_CSS_Logo.webp';
+	import bootstrapImg from '$lib/assets/skill/Bootstrap.webp';
+	import alpinejs from '$lib/assets/skill/alpinejs.webp';
+
+	import nodejsImg from '$lib/assets/skill/node-js.webp';
+	import phpImg from '$lib/assets/skill/PHP-logo.webp';
+	import wordpressImg from '$lib/assets/skill/Wordpress.webp';
+
+	import mysqlImg from '$lib/assets/skill/mysql.webp';
+	import firebaseImg from '$lib/assets/skill/Firebase.webp';
+
+	import gitImg from '$lib/assets/skill/Git.webp';
+	import jsonImg from '$lib/assets/skill/Json.webp';
+	import stripeImg from '$lib/assets/skill/stripe.webp';
+	import recaptchaImg from '$lib/assets/skill/ReCAPTCHA.webp';
+	import localImg from '$lib/assets/skill/local.webp';
+	import elementorImg from '$lib/assets/skill/elementor.webp';
+
+	import chatgptImg from '$lib/assets/skill/ChatGPT.webp';
+	import claudeImg from '$lib/assets/skill/claude.webp';
+	import chartjsImg from '$lib/assets/skill/chartjs.webp';
+
 	// Front-End skills
 	const frontendSkills = [
-		{ name: 'React', img: '$lib/assets/skill/react.webp' },
-		{ name: 'Vue', img: 'img/vue.png' },
-		{ name: 'HTML', img: 'img/html.png' },
-		{ name: 'CSS', img: 'img/css.png' },
-		{ name: 'JavaScript', img: 'img/javascript.png' },
-		{ name: 'Next.js', img: 'img/nextjs.png' },
-		{ name: 'Tailwind', img: 'img/tailwind.png' }
+		{ name: 'React', img: reactImg },
+		{ name: 'HTML', img: htmlImg },
+		{ name: 'CSS', img: cssImg },
+		{ name: 'Tailwind CSS', img: tailwindImg },
+		{ name: 'Bootstrap', img: bootstrapImg },
+		{ name: 'Alpine.js', img: alpinejs },
+		{ name: 'Chart.js', img: chartjsImg }
 	];
 
 	// Back-End skills
 	const backendSkills = [
-		{ name: 'Node.js', img: 'img/nodejs.png' },
-		{ name: 'Python', img: 'img/python.png' },
-		{ name: 'Java', img: 'img/java.png' },
-		{ name: 'PHP', img: 'img/php.png' }
+		{ name: 'Node.js', img: nodejsImg },
+		{ name: 'PHP', img: phpImg },
+		{ name: 'WordPress', img: wordpressImg }
 	];
 
 	// Database skills
 	const databaseSkills = [
-		{ name: 'MongoDB', img: 'img/mongodb.png' },
-		{ name: 'PostgreSQL', img: 'img/postgresql.png' },
-		{ name: 'MySQL', img: 'img/mysql.png' }
+		{ name: 'MySQL', img: mysqlImg },
+		{ name: 'Firebase', img: firebaseImg }
 	];
 
 	// Tools skills
 	const toolsSkills = [
-		{ name: 'Git', img: 'img/git.png' },
-		{ name: 'Docker', img: 'img/docker.png' },
-		{ name: 'VS Code', img: 'img/vscode.png' },
-		{ name: 'Figma', img: 'img/figma.png' }
+		{ name: 'Git', img: gitImg },
+		{ name: 'JSON', img: jsonImg },
+		{ name: 'Stripe', img: stripeImg },
+		{ name: 'reCAPTCHA', img: recaptchaImg },
+		{ name: 'Local', img: localImg },
+		{ name: 'Elementor', img: elementorImg }
 	];
 
-	// Design skills
-	const designSkills = [
-		{ name: 'Photoshop', img: 'img/photoshop.png' },
-		{ name: 'Illustrator', img: 'img/illustrator.png' }
+	// AI & Other
+	const aiSkills = [
+		{ name: 'ChatGPT', img: chatgptImg },
+		{ name: 'Claude', img: claudeImg }
 	];
 </script>
 
@@ -151,13 +177,13 @@
 			</div>
 		</section>
 
-		<!-- Design & Other -->
+		<!-- AI & Other -->
 		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-				{$t.skills.design}
+				AI & Assistants
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
-				{#each designSkills as skill}
+				{#each aiSkills as skill}
 					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
