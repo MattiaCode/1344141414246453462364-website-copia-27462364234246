@@ -24,9 +24,16 @@
 	import mysqlImg from '$lib/assets/skill/mysql.webp';
 	import firebaseImg from '$lib/assets/skill/Firebase.webp';
 
+	// Programming Languages
+	import luaImg from '$lib/assets/skill/lua.webp';
+	import cImg from '$lib/assets/skill/c.webp';
+	import csharpImg from '$lib/assets/skill/csharp.webp';
+
 	// Tools & Software
 	import gitImg from '$lib/assets/skill/Git.webp';
 	import jsonImg from '$lib/assets/skill/Json.webp';
+	import visualstudioImg from '$lib/assets/skill/visualstudio.webp';
+	import npmImg from '$lib/assets/skill/npm.webp';
 	import manictimeImg from '$lib/assets/skill/manictime.webp';
 	import keeperImg from '$lib/assets/skill/keeper.webp';
 	import onedriveImg from '$lib/assets/skill/onedrive.webp';
@@ -79,9 +86,18 @@
 		{ name: 'Firebase', img: firebaseImg }
 	];
 
+	// Programming Languages
+	const programmingSkills = [
+		{ name: 'C', img: cImg },
+		{ name: 'C#', img: csharpImg },
+		{ name: 'Lua', img: luaImg }
+	];
+
 	// Tools & Software
 	const toolsSkills = [
 		{ name: 'Git', img: gitImg },
+		{ name: 'Visual Studio', img: visualstudioImg },
+		{ name: 'npm', img: npmImg },
 		{ name: 'Docker', img: dockerImg },
 		{ name: 'JSON', img: jsonImg },
 		{ name: 'ManicTime', img: manictimeImg },
@@ -184,6 +200,29 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each databaseSkills as skill}
+					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+						<div class="flex flex-col items-center justify-center text-center h-full">
+							<img
+								src={skill.img}
+								alt={skill.name}
+								class="w-14 h-14 mb-4 object-contain"
+							/>
+							<p class="text-sm font-medium text-gray-900 dark:text-white">
+								{skill.name}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<!-- Programming Languages -->
+		<section class="mb-20">
+			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+				Programming Languages
+			</h2>
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+				{#each programmingSkills as skill}
 					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img

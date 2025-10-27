@@ -25,8 +25,15 @@ Le seguenti immagini devono essere aggiunte in questa directory in formato `.web
 - [x] mysql.webp ✓
 - [x] Firebase.webp ✓
 
+## Programming Languages
+- [ ] **c.webp** ← MANCANTE
+- [ ] **csharp.webp** ← MANCANTE
+- [ ] **lua.webp** ← MANCANTE
+
 ## Tools & Software
 - [x] Git.webp ✓
+- [ ] **visualstudio.webp** ← MANCANTE
+- [ ] **npm.webp** ← MANCANTE
 - [ ] **docker.webp** ← MANCANTE
 - [x] Json.webp ✓
 - [ ] **manictime.webp** ← MANCANTE
@@ -54,9 +61,9 @@ Le seguenti immagini devono essere aggiunte in questa directory in formato `.web
 ---
 
 ## Riepilogo
-**Totale immagini: 52**
+**Totale immagini: 42**
 - ✓ Presenti: 22
-- ✗ **Mancanti: 15** (quelle richieste ora)
+- ✗ **Mancanti: 20**
 
 ### Lista immagini da aggiungere:
 1. svelte.webp
@@ -64,13 +71,18 @@ Le seguenti immagini devono essere aggiunte in questa directory in formato `.web
 3. vite.webp
 4. bun.webp
 5. joomla.webp
-6. docker.webp
-7. manictime.webp
-8. keeper.webp
-9. onedrive.webp
-10. vercel.webp
-11. cloudflare.webp
-12. emailjs.webp
-13. iubenda.webp
-14. cookiebot.webp
-15. accessiway.webp
+6. c.webp
+7. csharp.webp
+8. lua.webp
+9. visualstudio.webp
+10. npm.webp
+11. docker.webp
+12. manictime.webp
+13. keeper.webp
+14. onedrive.webp
+15. vercel.webp
+16. cloudflare.webp
+17. emailjs.webp
+18. iubenda.webp
+19. cookiebot.webp
+20. accessiway.webp
