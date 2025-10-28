@@ -8,6 +8,7 @@
 	import viteImg from '$lib/assets/skill/Vite.webp';
 	import htmlImg from '$lib/assets/skill/html.webp';
 	import cssImg from '$lib/assets/skill/css.webp';
+	import javascriptImg from '$lib/assets/skill/1486641506.webp';
 	import tailwindImg from '$lib/assets/skill/Tailwind_CSS_Logo.webp';
 	import bootstrapImg from '$lib/assets/skill/Bootstrap.webp';
 	import alpineImg from '$lib/assets/skill/alpinejs.webp';
@@ -65,6 +66,7 @@
 		{ name: 'Vite', img: viteImg },
 		{ name: 'HTML', img: htmlImg },
 		{ name: 'CSS', img: cssImg },
+		{ name: 'JavaScript', img: javascriptImg },
 		{ name: 'Tailwind CSS', img: tailwindImg },
 		{ name: 'Bootstrap', img: bootstrapImg },
 		{ name: 'Alpine.js', img: alpineImg },
