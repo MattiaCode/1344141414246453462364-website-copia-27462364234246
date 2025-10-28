@@ -3,9 +3,9 @@
 
 	// Frontend frameworks & libraries
 	import reactImg from '$lib/assets/skill/react.webp';
-	// import svelteImg from '$lib/assets/skill/svelte.webp'; // TODO: aggiungi immagine
-	// import nextjsImg from '$lib/assets/skill/nextjs.webp'; // TODO: aggiungi immagine
-	// import viteImg from '$lib/assets/skill/vite.webp'; // TODO: aggiungi immagine
+	import svelteImg from '$lib/assets/skill/Svelte.webp';
+	import nextjsImg from '$lib/assets/skill/nextjs.webp';
+	import viteImg from '$lib/assets/skill/Vite.webp';
 	import htmlImg from '$lib/assets/skill/html.webp';
 	import cssImg from '$lib/assets/skill/css.webp';
 	import tailwindImg from '$lib/assets/skill/Tailwind_CSS_Logo.webp';
@@ -18,26 +18,25 @@
 	// import bunImg from '$lib/assets/skill/bun.webp'; // TODO: aggiungi immagine
 	import phpImg from '$lib/assets/skill/PHP-logo.webp';
 	import wordpressImg from '$lib/assets/skill/Wordpress.webp';
-	// import joomlaImg from '$lib/assets/skill/joomla.webp'; // TODO: aggiungi immagine
+	import joomlaImg from '$lib/assets/skill/Joomla.webp';
 
 	// Database
 	import mysqlImg from '$lib/assets/skill/mysql.webp';
 	import firebaseImg from '$lib/assets/skill/Firebase.webp';
 
 	// Programming Languages
-	// import luaImg from '$lib/assets/skill/lua.webp'; // TODO: aggiungi immagine
-	// import cImg from '$lib/assets/skill/c.webp'; // TODO: aggiungi immagine
-	// import csharpImg from '$lib/assets/skill/csharp.webp'; // TODO: aggiungi immagine
+	import luaImg from '$lib/assets/skill/Lua.webp';
+	import cImg from '$lib/assets/skill/C.webp';
+	import csharpImg from '$lib/assets/skill/Csharp.webp';
 
 	// Tools & Software
 	import gitImg from '$lib/assets/skill/Git.webp';
 	import jsonImg from '$lib/assets/skill/Json.webp';
-	// import visualstudioImg from '$lib/assets/skill/visualstudio.webp'; // TODO: aggiungi immagine
-	// import npmImg from '$lib/assets/skill/npm.webp'; // TODO: aggiungi immagine
-	// import manictimeImg from '$lib/assets/skill/manictime.webp'; // TODO: aggiungi immagine
-	// import keeperImg from '$lib/assets/skill/keeper.webp'; // TODO: aggiungi immagine
-	// import onedriveImg from '$lib/assets/skill/onedrive.webp'; // TODO: aggiungi immagine
-	// import dockerImg from '$lib/assets/skill/docker.webp'; // TODO: aggiungi immagine
+	import visualstudioImg from '$lib/assets/skill/Visual_Studio.webp';
+	import npmImg from '$lib/assets/skill/Npm.webp';
+	import manictimeImg from '$lib/assets/skill/manictime.webp';
+	import onedriveImg from '$lib/assets/skill/OneDrive.webp';
+	import dockerImg from '$lib/assets/skill/Docker.webp';
 	import elementorImg from '$lib/assets/skill/elementor.webp';
 
 	// Cloud & Services
@@ -60,9 +59,9 @@
 	// Front-End Development
 	const frontendSkills = [
 		{ name: 'React', img: reactImg },
-		// { name: 'Svelte', img: svelteImg }, // TODO: aggiungi immagine svelte.webp
-		// { name: 'Next.js', img: nextjsImg }, // TODO: aggiungi immagine nextjs.webp
-		// { name: 'Vite', img: viteImg }, // TODO: aggiungi immagine vite.webp
+		{ name: 'Svelte', img: svelteImg },
+		{ name: 'Next.js', img: nextjsImg },
+		{ name: 'Vite', img: viteImg },
 		{ name: 'HTML', img: htmlImg },
 		{ name: 'CSS', img: cssImg },
 		{ name: 'Tailwind CSS', img: tailwindImg },
@@ -76,8 +75,8 @@
 		{ name: 'Node.js', img: nodejsImg },
 		// { name: 'Bun', img: bunImg }, // TODO: aggiungi immagine bun.webp
 		{ name: 'PHP', img: phpImg },
-		{ name: 'WordPress', img: wordpressImg }
-		// { name: 'Joomla', img: joomlaImg } // TODO: aggiungi immagine joomla.webp
+		{ name: 'WordPress', img: wordpressImg },
+		{ name: 'Joomla', img: joomlaImg }
 	];
 
 	// Database
@@ -87,22 +86,21 @@
 	];
 
 	// Programming Languages (TUTTE COMMENTATE - aggiungi le immagini prima)
-	// const programmingSkills = [
-	// 	{ name: 'C', img: cImg }, // TODO: aggiungi immagine c.webp
-	// 	{ name: 'C#', img: csharpImg }, // TODO: aggiungi immagine csharp.webp
-	// 	{ name: 'Lua', img: luaImg } // TODO: aggiungi immagine lua.webp
-	// ];
+	const programmingSkills = [
+		{ name: 'C', img: cImg },
+		{ name: 'C#', img: csharpImg },
+		{ name: 'Lua', img: luaImg }
+	];
 
 	// Tools & Software
 	const toolsSkills = [
 		{ name: 'Git', img: gitImg },
-		// { name: 'Visual Studio', img: visualstudioImg }, // TODO: aggiungi immagine visualstudio.webp
-		// { name: 'npm', img: npmImg }, // TODO: aggiungi immagine npm.webp
-		// { name: 'Docker', img: dockerImg }, // TODO: aggiungi immagine docker.webp
+		{ name: 'Visual Studio', img: visualstudioImg },
+		{ name: 'npm', img: npmImg },
+		{ name: 'Docker', img: dockerImg },
 		{ name: 'JSON', img: jsonImg },
-		// { name: 'ManicTime', img: manictimeImg }, // TODO: aggiungi immagine manictime.webp
-		// { name: 'Keeper', img: keeperImg }, // TODO: aggiungi immagine keeper.webp
-		// { name: 'OneDrive', img: onedriveImg }, // TODO: aggiungi immagine onedrive.webp
+		{ name: 'ManicTime', img: manictimeImg },
+		{ name: 'OneDrive', img: onedriveImg },
 		{ name: 'Elementor', img: elementorImg }
 	];
 
@@ -217,7 +215,7 @@
 		</section>
 
 		<!-- Programming Languages - COMMENTATA finché non aggiungi le immagini -->
-		<!-- <section class="mb-20">
+		<section class="mb-20">
 			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Programming Languages
 			</h2>
@@ -237,7 +235,7 @@
 					</div>
 				{/each}
 			</div>
-		</section> -->
+		</section>
 
 		<!-- Tools & Software -->
 		<section class="mb-20">
