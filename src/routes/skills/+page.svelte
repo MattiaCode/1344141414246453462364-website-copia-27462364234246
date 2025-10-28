@@ -15,7 +15,7 @@
 
 	// Backend & CMS
 	import nodejsImg from '$lib/assets/skill/node-js.webp';
-	// import bunImg from '$lib/assets/skill/bun.webp'; // TODO: aggiungi immagine
+	import bunImg from '$lib/assets/skill/bun.webp';
 	import phpImg from '$lib/assets/skill/PHP-logo.webp';
 	import wordpressImg from '$lib/assets/skill/Wordpress.webp';
 	import joomlaImg from '$lib/assets/skill/Joomla.webp';
@@ -40,16 +40,16 @@
 	import elementorImg from '$lib/assets/skill/elementor.webp';
 
 	// Cloud & Services
-	// import vercelImg from '$lib/assets/skill/vercel.webp'; // TODO: aggiungi immagine
-	// import cloudflareImg from '$lib/assets/skill/cloudflare.webp'; // TODO: aggiungi immagine
+	import vercelImg from '$lib/assets/skill/vercel.webp';
+	import cloudflareImg from '$lib/assets/skill/Cloudflare.webp';
 	import stripeImg from '$lib/assets/skill/stripe.webp';
-	// import emailjsImg from '$lib/assets/skill/emailjs.webp'; // TODO: aggiungi immagine
+	import emailjsImg from '$lib/assets/skill/EmailJS.webp';
 	import localImg from '$lib/assets/skill/local.webp';
 
 	// Privacy & Accessibility
-	// import iubendaImg from '$lib/assets/skill/iubenda.webp'; // TODO: aggiungi immagine
-	// import cookiebotImg from '$lib/assets/skill/cookiebot.webp'; // TODO: aggiungi immagine
-	// import accessiwayImg from '$lib/assets/skill/accessiway.webp'; // TODO: aggiungi immagine
+	import iubendaImg from '$lib/assets/skill/iubenda.webp';
+	import cookiebotImg from '$lib/assets/skill/cookiebot.webp';
+	import accessiwayImg from '$lib/assets/skill/accessiway.webp';
 	import recaptchaImg from '$lib/assets/skill/ReCAPTCHA.webp';
 
 	// AI & Assistants
@@ -73,7 +73,7 @@
 	// Back-End & CMS
 	const backendSkills = [
 		{ name: 'Node.js', img: nodejsImg },
-		// { name: 'Bun', img: bunImg }, // TODO: aggiungi immagine bun.webp
+		{ name: 'Bun', img: bunImg },
 		{ name: 'PHP', img: phpImg },
 		{ name: 'WordPress', img: wordpressImg },
 		{ name: 'Joomla', img: joomlaImg }
@@ -85,7 +85,7 @@
 		{ name: 'Firebase', img: firebaseImg }
 	];
 
-	// Programming Languages (TUTTE COMMENTATE - aggiungi le immagini prima)
+	// Programming Languages
 	const programmingSkills = [
 		{ name: 'C', img: cImg },
 		{ name: 'C#', img: csharpImg },
@@ -106,18 +106,18 @@
 
 	// Cloud & Services
 	const cloudSkills = [
-		// { name: 'Vercel', img: vercelImg }, // TODO: aggiungi immagine vercel.webp
-		// { name: 'Cloudflare', img: cloudflareImg }, // TODO: aggiungi immagine cloudflare.webp
+		{ name: 'Vercel', img: vercelImg },
+		{ name: 'Cloudflare', img: cloudflareImg },
 		{ name: 'Stripe', img: stripeImg },
-		// { name: 'EmailJS', img: emailjsImg }, // TODO: aggiungi immagine emailjs.webp
+		{ name: 'EmailJS', img: emailjsImg },
 		{ name: 'Local', img: localImg }
 	];
 
 	// Privacy & Accessibility
 	const privacySkills = [
-		// { name: 'Iubenda', img: iubendaImg }, // TODO: aggiungi immagine iubenda.webp
-		// { name: 'Cookiebot', img: cookiebotImg }, // TODO: aggiungi immagine cookiebot.webp
-		// { name: 'accessiWay', img: accessiwayImg }, // TODO: aggiungi immagine accessiway.webp
+		{ name: 'Iubenda', img: iubendaImg },
+		{ name: 'Cookiebot', img: cookiebotImg },
+		{ name: 'accessiWay', img: accessiwayImg },
 		{ name: 'reCAPTCHA', img: recaptchaImg }
 	];
 
