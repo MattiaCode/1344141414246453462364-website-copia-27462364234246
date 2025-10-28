@@ -25,26 +25,27 @@
 	import firebaseImg from '$lib/assets/skill/Firebase.webp';
 
 	// Programming Languages
+	import typescriptImg from '$lib/assets/skill/typescript.webp';
 	import luaImg from '$lib/assets/skill/Lua.webp';
 	import cImg from '$lib/assets/skill/C.webp';
 	import csharpImg from '$lib/assets/skill/Csharp.webp';
 
 	// Tools & Software
 	import gitImg from '$lib/assets/skill/Git.webp';
-	import jsonImg from '$lib/assets/skill/Json.webp';
 	import visualstudioImg from '$lib/assets/skill/Visual_Studio.webp';
 	import npmImg from '$lib/assets/skill/Npm.webp';
-	import manictimeImg from '$lib/assets/skill/manictime.webp';
-	import onedriveImg from '$lib/assets/skill/OneDrive.webp';
 	import dockerImg from '$lib/assets/skill/Docker.webp';
+	import localImg from '$lib/assets/skill/local.webp';
+	import jsonImg from '$lib/assets/skill/Json.webp';
+	import manictimeImg from '$lib/assets/skill/manictime.webp';
 	import elementorImg from '$lib/assets/skill/elementor.webp';
 
 	// Cloud & Services
 	import vercelImg from '$lib/assets/skill/vercel.webp';
 	import cloudflareImg from '$lib/assets/skill/Cloudflare.webp';
+	import onedriveImg from '$lib/assets/skill/OneDrive.webp';
 	import stripeImg from '$lib/assets/skill/stripe.webp';
 	import emailjsImg from '$lib/assets/skill/EmailJS.webp';
-	import localImg from '$lib/assets/skill/local.webp';
 
 	// Privacy & Accessibility
 	import iubendaImg from '$lib/assets/skill/iubenda.webp';
@@ -87,6 +88,7 @@
 
 	// Programming Languages
 	const programmingSkills = [
+		{ name: 'TypeScript', img: typescriptImg },
 		{ name: 'C', img: cImg },
 		{ name: 'C#', img: csharpImg },
 		{ name: 'Lua', img: luaImg }
@@ -98,9 +100,9 @@
 		{ name: 'Visual Studio', img: visualstudioImg },
 		{ name: 'npm', img: npmImg },
 		{ name: 'Docker', img: dockerImg },
+		{ name: 'Local', img: localImg },
 		{ name: 'JSON', img: jsonImg },
 		{ name: 'ManicTime', img: manictimeImg },
-		{ name: 'OneDrive', img: onedriveImg },
 		{ name: 'Elementor', img: elementorImg }
 	];
 
@@ -108,9 +110,9 @@
 	const cloudSkills = [
 		{ name: 'Vercel', img: vercelImg },
 		{ name: 'Cloudflare', img: cloudflareImg },
+		{ name: 'OneDrive', img: onedriveImg },
 		{ name: 'Stripe', img: stripeImg },
-		{ name: 'EmailJS', img: emailjsImg },
-		{ name: 'Local', img: localImg }
+		{ name: 'EmailJS', img: emailjsImg }
 	];
 
 	// Privacy & Accessibility
