@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { language } from '$lib/stores/language';
-
-	// TODO: Aggiungi le immagini delle bandiere in src/lib/assets/languages/
-	// import itFlag from '$lib/assets/languages/it.webp';
-	// import enFlag from '$lib/assets/languages/en.webp';
+	
+	import itFlag from '$lib/assets/leanguages/Italy.webp';
+	import enFlag from '$lib/assets/leanguages/Eng.webp';
 
 	function toggleLanguage() {
 		language.toggle();
