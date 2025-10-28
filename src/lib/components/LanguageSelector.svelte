@@ -16,10 +16,8 @@
 	title={$language === 'it' ? 'Passa a Inglese' : 'Switch to Italian'}
 >
 	{#if $language === 'it'}
-		<!-- Temporaneamente emoji, sostituisci con: <img src={itFlag} alt="IT" class="w-6 h-6" /> -->
-		<span class="text-2xl">🇮🇹</span>
+		<img src={itFlag} alt="IT" class="w-6 h-6 rounded" />
 	{:else}
-		<!-- Temporaneamente emoji, sostituisci con: <img src={enFlag} alt="EN" class="w-6 h-6" /> -->
-		<span class="text-2xl">🇬🇧</span>
+		<img src={enFlag} alt="EN" class="w-6 h-6 rounded" />
 	{/if}
 </button>

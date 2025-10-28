@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { ArrowLeft } from 'lucide-svelte';
-	import errorImg from '$lib/assets/person/undraw_page-not-found_6wni.webp';
+	import errorImg from '$lib/assets/grafiche/undraw_page-not-found_6wni.webp';
 </script>
 
 <svelte:head>
