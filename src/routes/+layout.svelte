@@ -19,12 +19,12 @@
 	const siteName = 'MattiaCode Portfolio';
 
 	// Meta dinamici basati sulla lingua
-	$: metaTitle = $language === 'it'
+	const metaTitle = $derived($language === 'it'
 		? 'MattiaCode - Portfolio Sviluppatore Web & Designer'
-		: 'MattiaCode - Web Developer & Designer Portfolio';
-	$: metaDescription = $language === 'it'
+		: 'MattiaCode - Web Developer & Designer Portfolio');
+	const metaDescription = $derived($language === 'it'
 		? 'Portfolio professionale di MattiaCode: sviluppatore web full-stack specializzato in SvelteKit, React, TypeScript. Progetti web moderni, design UI/UX e soluzioni digitali.'
-		: 'Professional portfolio of MattiaCode: full-stack web developer specializing in SvelteKit, React, TypeScript. Modern web projects, UI/UX design and digital solutions.';
+		: 'Professional portfolio of MattiaCode: full-stack web developer specializing in SvelteKit, React, TypeScript. Modern web projects, UI/UX design and digital solutions.');
 
 	// Chiudi menu mobile
 	function closeMobileMenu() {
