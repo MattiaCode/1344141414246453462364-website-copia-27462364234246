@@ -1,73 +1,52 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.ico';
+	import Logo from '$lib/components/Logo.svelte';
+	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import { theme, toggleTheme } from '$lib/stores/theme';
+	import { t } from '$lib/stores/language';
+	import { initScrollAnimations } from '$lib/utils/scrollAnimations';
+	import { Home, User, FolderOpen, Target, Image, Sun, Moon } from 'lucide-svelte';
 
 	let { children } = $props();
+	let mobileMenuOpen = $state(false);
 
+	// Chiudi menu mobile
+	function closeMobileMenu() {
+		mobileMenuOpen = false;
+	}
+
+	// Toggle menu mobile
+	function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
+
+	// Inizializza animazioni scroll
 	onMount(() => {
-		// Disable right-click
-		document.addEventListener('contextmenu', (e) => {
-			e.preventDefault();
-			return false;
-		});
-
-		// Disable text selection
-		document.addEventListener('selectstart', (e) => {
-			e.preventDefault();
-			return false;
-		});
-
-		// Disable drag
-		document.addEventListener('dragstart', (e) => {
-			e.preventDefault();
-			return false;
-		});
-
-		// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S
-		document.addEventListener('keydown', (e) => {
-			// F12
-			if (e.key === 'F12') {
-				e.preventDefault();
-				return false;
-			}
-			// Ctrl+Shift+I (Inspect)
-			if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.keyCode === 73)) {
-				e.preventDefault();
-				return false;
-			}
-			// Ctrl+Shift+J (Console)
-			if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.keyCode === 74)) {
-				e.preventDefault();
-				return false;
-			}
-			// Ctrl+Shift+C (Inspect element)
-			if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.keyCode === 67)) {
-				e.preventDefault();
-				return false;
-			}
-			// Ctrl+U (View source)
-			if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
-				e.preventDefault();
-				return false;
-			}
-			// Ctrl+S (Save page)
-			if (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
-				e.preventDefault();
-				return false;
-			}
-			// Mac: Cmd+Option+I/J/C
-			if (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-				e.preventDefault();
-				return false;
-			}
-		});
+		const observer = initScrollAnimations();
+		return () => {
+			observer?.disconnect();
+		};
 	});
+
+	const navItems = [
+		{ href: '/', icon: Home },
+		{ href: '/about', icon: User },
+		{ href: '/project', icon: FolderOpen },
+		{ href: '/skills', icon: Target },
+		{ href: '/gallery', icon: Image }
+	];
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<!-- Local resources - Zero external cookies -->
+	<title>Portfolio - Magic Design</title>
+	<meta name="description" content="Portfolio personale minimalista" />
+	<!-- Protezioni sicurezza -->
+	<script src="/secure.js"></script>
+	<!-- Local resources -->
 	<link rel="stylesheet" href="/fontawesome/css/all.min.css">
 	<style>
 		@font-face {
@@ -94,19 +73,190 @@
 			font-weight: 700;
 			font-style: normal;
 		}
-		@font-face {
-			font-family: 'Montserrat';
-			src: url('/fonts/Montserrat-ExtraBold.ttf') format('truetype');
-			font-weight: 800;
-			font-style: normal;
-		}
-		@font-face {
-			font-family: 'Montserrat';
-			src: url('/fonts/Montserrat-Black.ttf') format('truetype');
-			font-weight: 900;
-			font-style: normal;
-		}
 	</style>
 </svelte:head>
 
-{@render children?.()}
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50">
+	<div class="max-w-7xl mx-auto px-4 py-3">
+		<div class="flex items-center justify-between gap-4">
+			<!-- Logo a sinistra -->
+			<Logo class="flex-shrink-0" />
+
+			<!-- UN UNICO contenitore centrale con TUTTI i link e toggle -->
+			<div class="hidden md:flex items-center bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1 py-1 backdrop-blur-sm">
+				<!-- Home - solo icona -->
+				<a
+					href="/"
+					class="p-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
+					class:bg-white={$page.url.pathname === '/'}
+					class:dark:bg-gray-700={$page.url.pathname === '/'}
+					title={$t.nav.home}
+				>
+					<Home size={18} class="text-gray-700 dark:text-gray-300" />
+				</a>
+
+				<!-- Separatore 1 -->
+				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
+
+				<!-- About - icona + testo -->
+				<a
+					href="/about"
+					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
+					class:bg-white={$page.url.pathname === '/about'}
+					class:dark:bg-gray-700={$page.url.pathname === '/about'}
+				>
+					<User size={16} class="text-gray-700 dark:text-gray-300" />
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.about}</span>
+				</a>
+
+				<!-- Project - icona + testo -->
+				<a
+					href="/project"
+					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
+					class:bg-white={$page.url.pathname === '/project'}
+					class:dark:bg-gray-700={$page.url.pathname === '/project'}
+				>
+					<FolderOpen size={16} class="text-gray-700 dark:text-gray-300" />
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.project}</span>
+				</a>
+
+				<!-- Skills - icona + testo -->
+				<a
+					href="/skills"
+					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
+					class:bg-white={$page.url.pathname === '/skills'}
+					class:dark:bg-gray-700={$page.url.pathname === '/skills'}
+				>
+					<Target size={16} class="text-gray-700 dark:text-gray-300" />
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.skills}</span>
+				</a>
+
+				<!-- Gallery - icona + testo -->
+				<a
+					href="/gallery"
+					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
+					class:bg-white={$page.url.pathname === '/gallery'}
+					class:dark:bg-gray-700={$page.url.pathname === '/gallery'}
+				>
+					<Image size={16} class="text-gray-700 dark:text-gray-300" />
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.gallery}</span>
+				</a>
+
+				<!-- Separatore 2 -->
+				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
+
+				<!-- Toggle tema - solo icona -->
+				<button
+					onclick={toggleTheme}
+					class="p-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
+					aria-label="Toggle theme"
+				>
+					{#if $theme === 'light'}
+						<Moon size={18} class="text-gray-700 dark:text-gray-300" />
+					{:else}
+						<Sun size={18} class="text-gray-300" />
+					{/if}
+				</button>
+			</div>
+
+			<!-- Selettore lingua a destra -->
+			<div class="hidden sm:block">
+				<LanguageSelector />
+			</div>
+
+			<!-- Menu mobile hamburger -->
+			<button
+				class="md:hidden p-2 rounded-full bg-gray-100 dark:bg-gray-800"
+				aria-label="Toggle mobile menu"
+				onclick={toggleMobileMenu}
+			>
+				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+		</div>
+
+		<!-- Menu mobile -->
+		{#if mobileMenuOpen}
+			<div class="md:hidden mt-3 pb-2">
+				<div class="bg-gray-100/80 dark:bg-gray-800/80 rounded-2xl p-2 backdrop-blur-sm">
+					{#each navItems as item}
+						{@const IconComponent = item.icon}
+						{@const labelKey = item.href === '/' ? 'home' : item.href.substring(1)}
+						<a
+							href={item.href}
+							onclick={closeMobileMenu}
+							class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
+							class:bg-white={$page.url.pathname === item.href}
+							class:dark:bg-gray-700={$page.url.pathname === item.href}
+						>
+							<IconComponent size={18} class="text-gray-700 dark:text-gray-300" />
+							<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav[labelKey]}</span>
+						</a>
+					{/each}
+					<div class="border-t border-gray-300 dark:border-gray-600 my-2"></div>
+					<button
+						onclick={toggleTheme}
+						class="w-full flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
+					>
+						{#if $theme === 'light'}
+							<Moon size={18} class="text-gray-700" />
+							<span class="text-sm font-medium text-gray-700">{$t.theme.dark}</span>
+						{:else}
+							<Sun size={18} class="text-gray-300" />
+							<span class="text-sm font-medium text-gray-300">{$t.theme.light}</span>
+						{/if}
+					</button>
+					<div class="mt-2">
+						<LanguageSelector />
+					</div>
+				</div>
+			</div>
+		{/if}
+	</div>
+</nav>
+
+<!-- Main content con padding per navbar -->
+<main class="pt-16 min-h-screen page-transition">
+	{@render children?.()}
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-gray-200 dark:border-gray-800">
+	<div class="max-w-7xl mx-auto px-4 py-8">
+		<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+			<!-- Left/Center: Copyright e credits -->
+			<div class="flex flex-wrap items-center justify-center md:justify-start gap-x-2 text-xs text-gray-500 dark:text-gray-500">
+				<span>© 2025</span>
+				<span>/</span>
+				<span>Portfolio</span>
+				<span>/</span>
+				<span>Created By MattiaCode</span>
+				<span class="hidden sm:inline">|</span>
+				<a href="/privacy-policy" class="hover:text-gray-900 dark:hover:text-gray-300 transition-colors">Privacy Policy</a>
+				<span class="hidden sm:inline">|</span>
+				<a href="/iubenda-partner" class="hover:text-gray-900 dark:hover:text-gray-300 transition-colors">iubenda Partner</a>
+			</div>
+
+			<!-- Right: Social icons -->
+			<div class="flex items-center gap-4">
+				<a href="https://github.com/MattiaCode-IT" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors">
+					<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+						<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+					</svg>
+				</a>
+				<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors">
+					<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+						<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+					</svg>
+				</a>
+				<a href="mailto:hello@example.com" aria-label="Email" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors">
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>

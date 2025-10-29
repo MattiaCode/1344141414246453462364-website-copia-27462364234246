@@ -5,49 +5,135 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #f8fafc;
+  }
+
+  html.dark {
+    background-color: #030712;
   }
 
   body {
-    @apply bg-white overflow-x-hidden;
+    @apply dark:bg-gray-950 text-gray-900 dark:text-gray-100 overflow-x-hidden transition-colors duration-300;
     font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+  }
+
+  body.dark, .dark body {
+    background-color: #030712;
+  }
+
+  /* Disabilita selezione testo globalmente */
+  *, body {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+  }
+
+  /* Abilita selezione testo solo per input e textarea */
+  input, textarea {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
   }
 }
 
 @layer utilities {
-  .wave {
-    display: inline-block;
-    transform-origin: 70% 70%;
+  /* Animazioni fluide per cambio pagina */
+  .page-transition {
+    animation: fadeIn 0.4s ease-in-out;
   }
 
-  .timeline-container {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scroll Animations - Stato iniziale */
+  .fade-in,
+  .fade-in-up,
+  .fade-in-down,
+  .scale-in,
+  .slide-in-left,
+  .slide-in-right {
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in-up {
+    transform: translateY(30px);
+  }
+
+  .fade-in-down {
+    transform: translateY(-30px);
+  }
+
+  .scale-in {
+    transform: scale(0.95);
+  }
+
+  .slide-in-left {
+    transform: translateX(-30px);
+  }
+
+  .slide-in-right {
+    transform: translateX(30px);
+  }
+
+  /* Stato animato - quando l'elemento entra nel viewport */
+  .animate-in.fade-in,
+  .animate-in.fade-in-up,
+  .animate-in.fade-in-down,
+  .animate-in.scale-in,
+  .animate-in.slide-in-left,
+  .animate-in.slide-in-right {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+
+  /* Hero section senza gradiente */
+  .hero-gradient {
     position: relative;
   }
 
-  @media (min-width: 1024px) {
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
-      border-radius: 2px;
-    }
+  /* Stile per i bottoni pill della navbar */
+  .nav-pill {
+    @apply flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-300 dark:border-gray-700
+           bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300
+           hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-600
+           transition-all duration-200 font-medium text-sm;
   }
 
-  @media (max-width: 1023px) {
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 20px;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
-    }
+  .nav-pill.active {
+    @apply bg-gray-100 dark:bg-gray-800 border-gray-400 dark:border-gray-600 text-gray-900 dark:text-white;
   }
 
-  .timeline-dot {
-    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.1);
+  /* Card stile minimalista */
+  .card {
+    @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800
+           rounded-2xl p-6 transition-all duration-300
+           hover:shadow-lg hover:border-gray-300 dark:hover:border-gray-700;
+  }
+
+  /* Griglia progetti */
+  .project-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Galleria immagini */
+  .gallery-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+  }
+
+  .gallery-item {
+    @apply aspect-square rounded-xl overflow-hidden cursor-pointer
+           hover:scale-105 transition-transform duration-300;
   }
 }

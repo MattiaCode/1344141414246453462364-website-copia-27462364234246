@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { ArrowLeft } from 'lucide-svelte';
+	import errorImg from '$lib/assets/grafiche/undraw_page-not-found_6wni.webp';
 </script>
 
 <svelte:head>
@@ -8,10 +9,10 @@
 	<meta name="robots" content="noindex">
 </svelte:head>
 
-<main class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 bg-white">
+<main class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
 	<div class="max-w-4xl mx-auto text-center">
 		<div class="mb-12">
-			<img src="/img/person/undraw_page-not-found_6wni.webp" alt="Pagina non trovata" class="mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl h-auto">
+			<img src={errorImg} alt="Pagina non trovata" class="mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl h-auto">
 		</div>
 		
 		<div class="space-y-6">
