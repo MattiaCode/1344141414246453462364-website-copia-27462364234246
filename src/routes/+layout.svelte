@@ -310,7 +310,7 @@
 </nav>
 
 <!-- Main content con padding per navbar -->
-<main class="md:pt-16 pb-24 md:pb-0 min-h-screen page-transition">
+<main class="md:pt-16 pb-32 md:pb-0 min-h-screen page-transition">
 	{@render children?.()}
 </main>
 
