@@ -1,17 +1,30 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.ico';
+	import socialPreview from '$lib/assets/social-preview.webp';
 	import Logo from '$lib/components/Logo.svelte';
 	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
-	import { t } from '$lib/stores/language';
+	import { t, language } from '$lib/stores/language';
 	import { initScrollAnimations } from '$lib/utils/scrollAnimations';
 	import { Home, User, FolderOpen, Target, Image, Sun, Moon } from 'lucide-svelte';
 
 	let { children } = $props();
 	let mobileMenuOpen = $state(false);
+
+	// Base URL del sito (aggiorna con il tuo dominio reale)
+	const siteUrl = 'https://mattiacode.com';
+	const siteName = 'MattiaCode Portfolio';
+
+	// Meta dinamici basati sulla lingua
+	$: metaTitle = $language === 'it'
+		? 'MattiaCode - Portfolio Sviluppatore Web & Designer'
+		: 'MattiaCode - Web Developer & Designer Portfolio';
+	$: metaDescription = $language === 'it'
+		? 'Portfolio professionale di MattiaCode: sviluppatore web full-stack specializzato in SvelteKit, React, TypeScript. Progetti web moderni, design UI/UX e soluzioni digitali.'
+		: 'Professional portfolio of MattiaCode: full-stack web developer specializing in SvelteKit, React, TypeScript. Modern web projects, UI/UX design and digital solutions.';
 
 	// Chiudi menu mobile
 	function closeMobileMenu() {
@@ -42,8 +55,39 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Portfolio - Magic Design</title>
-	<meta name="description" content="Portfolio personale minimalista" />
+
+	<!-- SEO Meta Tags -->
+	<title>{metaTitle}</title>
+	<meta name="description" content={metaDescription} />
+	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, React, TypeScript, UI/UX design, portfolio, sviluppatore web, designer" />
+	<meta name="author" content="MattiaCode" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href={siteUrl + $page.url.pathname} />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={siteUrl + $page.url.pathname} />
+	<meta property="og:title" content={metaTitle} />
+	<meta property="og:description" content={metaDescription} />
+	<meta property="og:image" content={siteUrl + socialPreview} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:site_name" content={siteName} />
+	<meta property="og:locale" content={$language === 'it' ? 'it_IT' : 'en_US'} />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={siteUrl + $page.url.pathname} />
+	<meta name="twitter:title" content={metaTitle} />
+	<meta name="twitter:description" content={metaDescription} />
+	<meta name="twitter:image" content={siteUrl + socialPreview} />
+	<meta name="twitter:creator" content="@MattiaCode" />
+
+	<!-- Additional Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#111827" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
 	<!-- Protezioni sicurezza -->
 	<script src="/secure.js"></script>
 	<!-- Local resources -->
@@ -78,10 +122,12 @@
 
 <!-- Navbar -->
 <nav class="fixed top-0 left-0 right-0 z-50">
-	<div class="max-w-7xl mx-auto px-4 py-3">
-		<div class="flex items-center justify-between gap-4">
-			<!-- Logo a sinistra -->
-			<Logo class="flex-shrink-0" />
+	<div class="max-w-full px-2 py-3">
+		<div class="flex items-center justify-between gap-2">
+			<!-- Logo a sinistra - quasi al limite -->
+			<div class="flex-shrink-0">
+				<Logo />
+			</div>
 
 			<!-- UN UNICO contenitore centrale con TUTTI i link e toggle -->
 			<div class="hidden md:flex items-center bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1 py-1 backdrop-blur-sm">
@@ -160,21 +206,40 @@
 				</button>
 			</div>
 
-			<!-- Selettore lingua a destra -->
-			<div class="hidden sm:block">
+			<!-- Desktop: lingua a destra quasi al limite -->
+			<div class="hidden md:flex flex-shrink-0">
 				<LanguageSelector />
 			</div>
 
-			<!-- Menu mobile hamburger -->
-			<button
-				class="md:hidden p-2 rounded-full bg-gray-100 dark:bg-gray-800"
-				aria-label="Toggle mobile menu"
-				onclick={toggleMobileMenu}
-			>
-				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-				</svg>
-			</button>
+			<!-- Mobile: Lingua e Dark mode fuori dal menu hamburger -->
+			<div class="flex md:hidden items-center gap-2">
+				<!-- Toggle tema mobile -->
+				<button
+					onclick={toggleTheme}
+					class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+					aria-label="Toggle theme"
+				>
+					{#if $theme === 'light'}
+						<Moon size={18} class="text-gray-700" />
+					{:else}
+						<Sun size={18} class="text-gray-300" />
+					{/if}
+				</button>
+
+				<!-- Selettore lingua mobile -->
+				<LanguageSelector />
+
+				<!-- Menu mobile hamburger -->
+				<button
+					class="p-2 rounded-full bg-gray-100 dark:bg-gray-800"
+					aria-label="Toggle mobile menu"
+					onclick={toggleMobileMenu}
+				>
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+			</div>
 		</div>
 
 		<!-- Menu mobile -->
@@ -195,22 +260,6 @@
 							<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav[labelKey]}</span>
 						</a>
 					{/each}
-					<div class="border-t border-gray-300 dark:border-gray-600 my-2"></div>
-					<button
-						onclick={toggleTheme}
-						class="w-full flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
-					>
-						{#if $theme === 'light'}
-							<Moon size={18} class="text-gray-700" />
-							<span class="text-sm font-medium text-gray-700">{$t.theme.dark}</span>
-						{:else}
-							<Sun size={18} class="text-gray-300" />
-							<span class="text-sm font-medium text-gray-300">{$t.theme.light}</span>
-						{/if}
-					</button>
-					<div class="mt-2">
-						<LanguageSelector />
-					</div>
 				</div>
 			</div>
 		{/if}
