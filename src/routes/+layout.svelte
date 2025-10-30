@@ -352,3 +352,6 @@
 		</div>
 	</div>
 </footer>
+
+<!-- Mobile spacer - Spazio vuoto per la bottom navbar -->
+<div class="md:hidden h-32" aria-hidden="true"></div>
