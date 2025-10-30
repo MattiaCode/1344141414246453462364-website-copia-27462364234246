@@ -3,26 +3,40 @@
 	import { onMount } from 'svelte';
 	import { t } from '$lib/stores/language';
 
+	// Import gallery images
+	import img1 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.44.02_7bd2ee06.webp';
+	import img2 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.44.03_f13b9b60.webp';
+	import img3 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.44.04_ea5d7adf.webp';
+	import img4 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.44.05_117a205f.webp';
+	import img5 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.44.05_44196849.webp';
+	import img6 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.44.06_33b2fa11.webp';
+	import img7 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.48.41_1b69d6aa.webp';
+	import img8 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.48.41_4d011bec.webp';
+	import img9 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.48.42_763cac8f.webp';
+	import img10 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.49.53_a838af44.webp';
+	import img11 from '$lib/assets/Gallery/Immagine WhatsApp 2025-10-30 ore 15.49.54_1703038e.webp';
+	import img12 from '$lib/assets/Gallery/Immagine-WhatsApp-2025-10-30-ore-15.44.04_edbe75b3.webp';
+
 	let selectedImage = $state<number | null>(null);
 
 	// Gallery images - 12 images in masonry layout
 	const galleryImages = [
 		// Column 1
-		{ id: 0, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg', alt: 'Gallery image 1' },
-		{ id: 1, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg', alt: 'Gallery image 2' },
-		{ id: 2, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg', alt: 'Gallery image 3' },
+		{ id: 0, url: img1, alt: 'Gallery image 1' },
+		{ id: 1, url: img2, alt: 'Gallery image 2' },
+		{ id: 2, url: img3, alt: 'Gallery image 3' },
 		// Column 2
-		{ id: 3, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg', alt: 'Gallery image 4' },
-		{ id: 4, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg', alt: 'Gallery image 5' },
-		{ id: 5, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg', alt: 'Gallery image 6' },
+		{ id: 3, url: img4, alt: 'Gallery image 4' },
+		{ id: 4, url: img5, alt: 'Gallery image 5' },
+		{ id: 5, url: img6, alt: 'Gallery image 6' },
 		// Column 3
-		{ id: 6, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg', alt: 'Gallery image 7' },
-		{ id: 7, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg', alt: 'Gallery image 8' },
-		{ id: 8, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg', alt: 'Gallery image 9' },
+		{ id: 6, url: img7, alt: 'Gallery image 7' },
+		{ id: 7, url: img8, alt: 'Gallery image 8' },
+		{ id: 8, url: img9, alt: 'Gallery image 9' },
 		// Column 4
-		{ id: 9, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg', alt: 'Gallery image 10' },
-		{ id: 10, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg', alt: 'Gallery image 11' },
-		{ id: 11, url: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg', alt: 'Gallery image 12' }
+		{ id: 9, url: img10, alt: 'Gallery image 10' },
+		{ id: 10, url: img11, alt: 'Gallery image 11' },
+		{ id: 11, url: img12, alt: 'Gallery image 12' }
 	];
 
 	function openLightbox(id: number) {
