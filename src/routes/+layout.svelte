@@ -310,13 +310,13 @@
 </nav>
 
 <!-- Main content con padding per navbar -->
-<main class="md:pt-16 pb-32 md:pb-0 min-h-screen page-transition">
+<main class="md:pt-16 min-h-screen page-transition">
 	{@render children?.()}
 </main>
 
 <!-- Footer -->
 <footer class="border-t border-gray-200 dark:border-gray-800">
-	<div class="max-w-7xl mx-auto px-4 py-8">
+	<div class="max-w-7xl mx-auto px-4 py-6">
 		<div class="flex flex-col md:flex-row items-center justify-between gap-4">
 			<!-- Left/Center: Copyright e credits -->
 			<div class="flex flex-wrap items-center justify-center md:justify-start gap-x-2 text-xs text-gray-500 dark:text-gray-500">
