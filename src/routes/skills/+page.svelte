@@ -59,13 +59,14 @@
 	import claudeImg from '$lib/assets/skill/claude.webp';
 
 	// Design & UI/UX
-	const figmaImg = 'img/figma.png';
-	const coolorsImg = 'img/coolors.png';
-	const dribbbleImg = 'img/dribbble.png';
+	import figmaImg from '$lib/assets/skill/figma.webp';
+	import coolorsImg from '$lib/assets/skill/coolors.webp';
+	import googlefonts from '$lib/assets/skill/google-fonts.webp';
+	import dribbbleImg from '$lib/assets/skill/dribbble.webp';
 
 	// SEO & Marketing
-	const screamingfrogImg = 'img/screaming-frog.png';
-	const ahrefsImg = 'img/ahrefs.png';
+	import screamingfrogImg from '$lib/assets/skill/screaming-frog.webp';
+	import ahrefsImg from '$lib/assets/skill/ahrefs.webp';
 
 	// Front-End Development
 	const frontendSkills = [
@@ -80,7 +81,7 @@
 		{ name: 'Bootstrap', img: bootstrapImg },
 		{ name: 'Alpine.js', img: alpineImg },
 		{ name: 'Chart.js', img: chartjsImg },
-		{ name: 'Google Fonts', img: 'img/google-fonts.png' }
+		{ name: 'Google Fonts', img: googlefonts }
 	];
 
 	// Back-End & CMS
