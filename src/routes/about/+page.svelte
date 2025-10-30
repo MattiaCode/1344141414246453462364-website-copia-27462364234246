@@ -26,9 +26,11 @@
 				<div class="bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 					<!-- Foto profilo -->
 					<div class="flex justify-center mb-6">
-						<div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-3xl font-bold">
-							S
-						</div>
+						<img
+							src="assets/me.webp"
+							alt="MattiaCode"
+							class="w-24 h-24 rounded-full object-cover"
+						/>
 					</div>
 
 					<!-- Nome -->

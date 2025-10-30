@@ -26,9 +26,11 @@
 			<!-- Card profilo PICCOLA -->
 			<a href="/about" class="group inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all shadow-sm">
 				<!-- Avatar piccolo -->
-				<div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-					S
-				</div>
+				<img
+					src="assets/me.webp"
+					alt="MattiaCode"
+					class="w-8 h-8 rounded-full object-cover flex-shrink-0"
+				/>
 				<!-- Testo piccolo -->
 				<div class="flex items-center gap-1.5 text-sm">
 					<span class="text-gray-600 dark:text-gray-400">{$t.home.aboutLabel}</span>
