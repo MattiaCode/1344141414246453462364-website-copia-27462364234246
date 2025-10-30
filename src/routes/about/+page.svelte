@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Mail, MapPin, Github, Linkedin, Calendar } from 'lucide-svelte';
 	import { t } from '$lib/stores/language';
+	import meImage from '$lib/assets/me.webp';
 
 	let activeSection = $state('introduction');
 
@@ -27,7 +28,7 @@
 					<!-- Foto profilo -->
 					<div class="flex justify-center mb-6">
 						<img
-							src="assets/me.webp"
+							src={meImage}
 							alt="MattiaCode"
 							class="w-24 h-24 rounded-full object-cover"
 						/>
