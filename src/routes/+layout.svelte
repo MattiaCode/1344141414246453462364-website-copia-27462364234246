@@ -112,13 +112,8 @@
 <!-- Desktop Navbar - Solo visibile su md e superiori -->
 <nav class="hidden md:block fixed top-0 left-0 right-0 z-50">
 	<div class="max-w-full px-2 py-3">
-		<div class="flex items-center justify-between gap-2">
-			<!-- Logo a sinistra -->
-			<div class="flex-shrink-0">
-				<Logo />
-			</div>
-
-			<!-- Contenitore centrale con link e toggle -->
+		<div class="flex items-center justify-center">
+			<!-- Contenitore centrale con link e toggle - CENTRATO -->
 			<div class="flex items-center bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1 py-1 backdrop-blur-sm">
 				<!-- Home -->
 				<a
@@ -191,11 +186,14 @@
 						<Sun size={18} class="text-gray-300" />
 					{/if}
 				</button>
-			</div>
 
-			<!-- Lingua a destra -->
-			<div class="flex-shrink-0">
-				<LanguageSelector />
+				<!-- Separatore lingua -->
+				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
+
+				<!-- Selettore lingua -->
+				<div class="px-1">
+					<LanguageSelector />
+				</div>
 			</div>
 		</div>
 	</div>
