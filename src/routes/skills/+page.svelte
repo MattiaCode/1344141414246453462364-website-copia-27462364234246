@@ -58,6 +58,15 @@
 	import chatgptImg from '$lib/assets/skill/ChatGPT.webp';
 	import claudeImg from '$lib/assets/skill/claude.webp';
 
+	// Design & UI/UX
+	const figmaImg = 'img/figma.png';
+	const coolorsImg = 'img/coolors.png';
+	const dribbbleImg = 'img/dribbble.png';
+
+	// SEO & Marketing
+	const screamingfrogImg = 'img/screaming-frog.png';
+	const ahrefsImg = 'img/ahrefs.png';
+
 	// Front-End Development
 	const frontendSkills = [
 		{ name: 'React', img: reactImg },
@@ -70,7 +79,8 @@
 		{ name: 'Tailwind CSS', img: tailwindImg },
 		{ name: 'Bootstrap', img: bootstrapImg },
 		{ name: 'Alpine.js', img: alpineImg },
-		{ name: 'Chart.js', img: chartjsImg }
+		{ name: 'Chart.js', img: chartjsImg },
+		{ name: 'Google Fonts', img: 'img/google-fonts.png' }
 	];
 
 	// Back-End & CMS
@@ -129,6 +139,19 @@
 	const aiSkills = [
 		{ name: 'ChatGPT', img: chatgptImg },
 		{ name: 'Claude', img: claudeImg }
+	];
+
+	// Design & UI/UX
+	const designSkills = [
+		{ name: 'Figma', img: figmaImg },
+		{ name: 'Coolors', img: coolorsImg },
+		{ name: 'Dribbble', img: dribbbleImg }
+	];
+
+	// SEO & Marketing
+	const seoSkills = [
+		{ name: 'Screaming Frog', img: screamingfrogImg },
+		{ name: 'Ahrefs', img: ahrefsImg }
 	];
 </script>
 
@@ -317,6 +340,52 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each aiSkills as skill}
+					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+						<div class="flex flex-col items-center justify-center text-center h-full">
+							<img
+								src={skill.img}
+								alt={skill.name}
+								class="w-14 h-14 mb-4 object-contain"
+							/>
+							<p class="text-sm font-medium text-gray-900 dark:text-white">
+								{skill.name}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<!-- Design & UI/UX -->
+		<section class="mb-20">
+			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+				Design & UI/UX
+			</h2>
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+				{#each designSkills as skill}
+					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+						<div class="flex flex-col items-center justify-center text-center h-full">
+							<img
+								src={skill.img}
+								alt={skill.name}
+								class="w-14 h-14 mb-4 object-contain"
+							/>
+							<p class="text-sm font-medium text-gray-900 dark:text-white">
+								{skill.name}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<!-- SEO & Marketing -->
+		<section class="mb-20">
+			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+				SEO & Marketing
+			</h2>
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+				{#each seoSkills as skill}
 					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
