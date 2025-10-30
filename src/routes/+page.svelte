@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ArrowRight } from 'lucide-svelte';
 	import { t } from '$lib/stores/language';
+	import meImage from '$lib/assets/me.webp';
 </script>
 
 <svelte:head>
@@ -27,7 +28,7 @@
 			<a href="/about" class="group inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all shadow-sm">
 				<!-- Avatar piccolo -->
 				<img
-					src="assets/me.webp"
+					src={meImage}
 					alt="MattiaCode"
 					class="w-8 h-8 rounded-full object-cover flex-shrink-0"
 				/>
