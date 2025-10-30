@@ -2,7 +2,6 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.ico';
 	import socialPreview from '$lib/assets/social-preview.webp';
-	import Logo from '$lib/components/Logo.svelte';
 	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
