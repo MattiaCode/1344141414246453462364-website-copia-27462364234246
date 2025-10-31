@@ -184,6 +184,7 @@
 				<section id="studies" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
 					<div class="space-y-6">
+						<!-- Education 1 -->
 						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-2">
 								<div>
@@ -195,6 +196,37 @@
 							<p class="text-gray-700 dark:text-gray-300">
 								{$t.about.education1Focus}
 							</p>
+						</div>
+
+						<!-- Education 2 - Dublino -->
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+							<div class="flex items-start justify-between mb-2">
+								<div>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education2Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.education2School}</p>
+								</div>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education2Period}</span>
+							</div>
+							<p class="text-gray-700 dark:text-gray-300">
+								{$t.about.education2Focus}
+							</p>
+						</div>
+
+						<!-- Education 3 - iubenda GDPR -->
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+							<div class="flex items-start justify-between mb-2">
+								<div>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education3Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.education3School}</p>
+								</div>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education3Period}</span>
+							</div>
+							<p class="text-gray-700 dark:text-gray-300 mb-3">
+								{$t.about.education3Focus}
+							</p>
+							<a href="/iubenda-partner" class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
+								{$t.about.education3Link} →
+							</a>
 						</div>
 					</div>
 				</section>
