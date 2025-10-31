@@ -8,6 +8,7 @@
 	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { t, language } from '$lib/stores/language';
 	import { initScrollAnimations } from '$lib/utils/scrollAnimations';
+	import { initDevtoolProtection } from '$lib/disableDevtool';
 	import { Home, User, FolderOpen, Target, Image, Sun, Moon } from 'lucide-svelte';
 
 	let { children } = $props();
@@ -24,9 +25,13 @@
 		? 'Portfolio professionale di MattiaCode: sviluppatore web full-stack specializzato in SvelteKit, React, TypeScript. Progetti web moderni, design UI/UX e soluzioni digitali.'
 		: 'Professional portfolio of MattiaCode: full-stack web developer specializing in SvelteKit, React, TypeScript. Modern web projects, UI/UX design and digital solutions.');
 
-	// Inizializza animazioni scroll
+	// Inizializza animazioni scroll e protezione DevTools
 	onMount(() => {
 		const observer = initScrollAnimations();
+
+		// Inizializza protezione DevTools
+		initDevtoolProtection();
+
 		return () => {
 			observer?.disconnect();
 		};
@@ -76,8 +81,6 @@
 	<meta name="theme-color" content="#111827" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<!-- Protezioni sicurezza -->
-	<script src="/secure.js"></script>
 	<!-- Local resources -->
 	<link rel="stylesheet" href="/fontawesome/css/all.min.css">
 	<style>
