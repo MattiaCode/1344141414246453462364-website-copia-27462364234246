@@ -267,6 +267,19 @@
 				<Image size={24} />
 			</a>
 
+			<!-- Dark Mode Toggle -->
+			<button
+				onclick={toggleTheme}
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all text-gray-600 dark:text-gray-400"
+				aria-label="Toggle theme"
+			>
+				{#if $theme === 'light'}
+					<Moon size={24} />
+				{:else}
+					<Sun size={24} />
+				{/if}
+			</button>
+
 			<!-- Language Toggle - Icona bandiera -->
 			<button
 				onclick={() => language.toggle()}
@@ -287,19 +300,6 @@
 						<path d="M12 6V18M2 12H22" stroke="white" stroke-width="4"/>
 						<path d="M12 6V18M2 12H22" stroke="#C8102E" stroke-width="2.4"/>
 					</svg>
-				{/if}
-			</button>
-
-			<!-- Dark Mode Toggle -->
-			<button
-				onclick={toggleTheme}
-				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all text-gray-600 dark:text-gray-400"
-				aria-label="Toggle theme"
-			>
-				{#if $theme === 'light'}
-					<Moon size={24} />
-				{:else}
-					<Sun size={24} />
 				{/if}
 			</button>
 		</div>
