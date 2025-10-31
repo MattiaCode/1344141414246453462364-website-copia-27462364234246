@@ -189,22 +189,22 @@
 	<div class="max-w-7xl mx-auto px-4 py-20">
 		<!-- Header -->
 		<div class="mb-20 text-center">
-			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+			<h1 class="fade-in-up text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
 				{$t.skills.title}
 			</h1>
-			<p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+			<p class="fade-in-up delay-100 text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
 				{$t.skills.subtitle}
 			</p>
 		</div>
 
 		<!-- Front-End Development -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				{$t.skills.frontend}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each frontendSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -222,12 +222,12 @@
 
 		<!-- Back-End & CMS -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Backend & CMS
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each backendSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -245,12 +245,12 @@
 
 		<!-- Databases -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				{$t.skills.databases}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each databaseSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -268,12 +268,12 @@
 
 		<!-- Programming Languages - COMMENTATA finché non aggiungi le immagini -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Programming Languages
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each programmingSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -291,12 +291,12 @@
 
 		<!-- Tools & Software -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				{$t.skills.tools}
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each toolsSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -314,12 +314,12 @@
 
 		<!-- Cloud & Services -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Cloud & Services
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each cloudSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -337,12 +337,12 @@
 
 		<!-- Privacy & Accessibility -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Privacy & Accessibility
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each privacySkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -360,12 +360,12 @@
 
 		<!-- AI & Assistants -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				AI & Assistants
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each aiSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -383,12 +383,12 @@
 
 		<!-- Design & UI/UX -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				Design & UI/UX
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each designSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}
@@ -406,12 +406,12 @@
 
 		<!-- SEO & Marketing -->
 		<section class="mb-20">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+			<h2 class="fade-in-up text-2xl font-bold text-gray-900 dark:text-white mb-8">
 				SEO & Marketing
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each seoSkills as skill}
-					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+					<div class="scale-in group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img
 								src={skill.img}

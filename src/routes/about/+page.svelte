@@ -24,7 +24,7 @@
 		<div class="flex flex-col lg:flex-row gap-12">
 			<!-- SIDEBAR SINISTRA - Fissa su desktop -->
 			<aside class="lg:w-80 lg:sticky lg:top-24 lg:self-start flex-shrink-0">
-				<div class="bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+				<div class="fade-in-up bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 					<!-- Foto profilo -->
 					<div class="flex justify-center mb-6">
 						<img
@@ -95,15 +95,15 @@
 			<main class="flex-1 min-w-0">
 				<!-- Header con titolo e CTA -->
 				<div class="mb-12">
-					<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-3">
+					<h1 class="fade-in-up delay-100 text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-3">
 						{$t.about.name}
 					</h1>
-					<p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+					<p class="fade-in-up delay-200 text-xl text-gray-600 dark:text-gray-400 mb-6">
 						{$t.about.role}
 					</p>
 
 					<!-- Social icons -->
-					<div class="flex items-center gap-4">
+					<div class="fade-in-up delay-300 flex items-center gap-4">
 						<a href="https://github.com/MattiaCode-IT" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
 							<Github size={20} class="text-gray-700 dark:text-gray-300" />
 						</a>
@@ -118,8 +118,8 @@
 
 				<!-- Introduction -->
 				<section id="introduction" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">{$t.about.introduction}</h2>
-					<div class="prose prose-lg dark:prose-invert max-w-none">
+					<h2 class="fade-in-up text-3xl font-bold text-gray-900 dark:text-white mb-6">{$t.about.introduction}</h2>
+					<div class="fade-in-up delay-100 prose prose-lg dark:prose-invert max-w-none">
 						<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
 							{$t.about.introText1}
 						</p>
@@ -134,10 +134,10 @@
 
 				<!-- Work Experience -->
 				<section id="work-experience" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.workExperience}</h2>
+					<h2 class="fade-in-up text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.workExperience}</h2>
 					<div class="space-y-8">
 						<!-- Job 1 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="fade-in-up delay-100 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-4">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job1Title}</h3>
@@ -151,7 +151,7 @@
 						</div>
 
 						<!-- Job 2 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="fade-in-up delay-200 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-4">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job2Title}</h3>
@@ -168,10 +168,10 @@
 
 				<!-- Studies -->
 				<section id="studies" class="mb-16 scroll-mt-24">
-					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
+					<h2 class="fade-in-up text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
 					<div class="space-y-6">
 						<!-- Education 2 - Dublino -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="fade-in-up delay-100 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-2">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education2Title}</h3>
@@ -185,7 +185,7 @@
 						</div>
 
 						<!-- Education 3 - iubenda GDPR -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+						<div class="fade-in-up delay-200 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-2">
 								<div>
 									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education3Title}</h3>

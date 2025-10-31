@@ -15,17 +15,17 @@
 		<div class="max-w-4xl w-full mx-auto text-center">
 
 			<!-- Titolo NORMALE (NON gigante!) -->
-			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+			<h1 class="fade-in-up text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
 				{$t.home.title}
 			</h1>
 
 			<!-- Sottotitolo grigio NORMALE -->
-			<p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+			<p class="fade-in-up delay-100 text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
 				{$t.home.subtitle}
 			</p>
 
 			<!-- Card profilo PICCOLA -->
-			<a href="/about" class="group inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all shadow-sm">
+			<a href="/about" class="fade-in-up delay-200 group inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all shadow-sm">
 				<!-- Avatar piccolo -->
 				<img
 					src={meImage}
@@ -47,7 +47,7 @@
 
 <!-- Featured Work Section - GRANDE CARD SOTTO -->
 <div class="max-w-6xl mx-auto px-4 pb-20">
-	<a href="/project" class="group block">
+	<a href="/project" class="scale-in group block">
 		<!-- Grande immagine featured project -->
 		<div class="aspect-[16/9] rounded-3xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800 shadow-lg">
 			<img
@@ -76,12 +76,12 @@
 <!-- More Featured Work -->
 <div class="max-w-6xl mx-auto px-4 pb-32">
 	<div class="mb-12">
-		<h2 class="text-3xl font-bold text-gray-900 dark:text-white">{$t.home.moreWork}</h2>
+		<h2 class="fade-in-up text-3xl font-bold text-gray-900 dark:text-white">{$t.home.moreWork}</h2>
 	</div>
 
 	<div class="grid md:grid-cols-2 gap-8">
 		<!-- Project Card 1 -->
-		<a href="/project" class="group block">
+		<a href="/project" class="slide-in-left group block">
 			<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800">
 				<img
 					src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
@@ -104,7 +104,7 @@
 		</a>
 
 		<!-- Project Card 2 -->
-		<a href="/project" class="group block">
+		<a href="/project" class="slide-in-right group block">
 			<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-200 dark:border-gray-800">
 				<img
 					src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
@@ -129,7 +129,7 @@
 
 	<!-- View all projects link -->
 	<div class="text-center mt-12">
-		<a href="/project" class="inline-flex items-center gap-2 text-gray-900 dark:text-white font-medium hover:gap-3 transition-all">
+		<a href="/project" class="fade-in-up inline-flex items-center gap-2 text-gray-900 dark:text-white font-medium hover:gap-3 transition-all">
 			<span>{$t.home.viewAll}</span>
 			<ArrowRight size={18} />
 		</a>

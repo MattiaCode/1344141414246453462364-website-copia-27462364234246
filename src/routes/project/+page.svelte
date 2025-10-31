@@ -71,10 +71,10 @@
 	<div class="max-w-7xl mx-auto px-4 py-20">
 		<!-- Header -->
 		<div class="mb-16">
-			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+			<h1 class="fade-in-up text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
 				{$t.projects.title}
 			</h1>
-			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+			<p class="fade-in-up delay-100 text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
 				{$t.projects.subtitle}
 			</p>
 		</div>
@@ -82,7 +82,7 @@
 		<!-- Projects Grid -->
 		<div class="grid md:grid-cols-2 gap-x-8 gap-y-16 mb-20">
 			{#each $projects as project}
-				<article class="group">
+				<article class="fade-in-up group">
 					<!-- Project Image -->
 					<a href={project.link} class="block mb-6 relative overflow-hidden rounded-2xl">
 						<div class="aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -125,7 +125,7 @@
 		</div>
 
 		<!-- CTA Section -->
-		<div class="text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50">
+		<div class="scale-in text-center py-16 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-800/50">
 			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
 				{$t.projects.ctaTitle}
 			</h2>

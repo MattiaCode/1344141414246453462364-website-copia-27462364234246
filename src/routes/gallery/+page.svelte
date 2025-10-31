@@ -76,10 +76,10 @@
 	<div class="max-w-7xl mx-auto px-4 py-20">
 		<!-- Header -->
 		<div class="mb-16">
-			<h1 class="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+			<h1 class="fade-in-up text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
 				{$t.gallery.title}
 			</h1>
-			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+			<p class="fade-in-up delay-100 text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
 				{$t.gallery.subtitle}
 			</p>
 		</div>
@@ -89,7 +89,7 @@
 			{#each galleryImages as image}
 				<button
 					onclick={() => openLightbox(image.id)}
-					class="group relative block w-full break-inside-avoid mb-4"
+					class="scale-in group relative block w-full break-inside-avoid mb-4"
 				>
 					<img
 						src={image.url}
