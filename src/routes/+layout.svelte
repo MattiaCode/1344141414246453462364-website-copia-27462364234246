@@ -13,7 +13,7 @@
 	let { children } = $props();
 
 	// Base URL del sito (aggiorna con il tuo dominio reale)
-	const siteUrl = 'https://mattiacode.com';
+	const siteUrl = 'https://mattiacode.it';
 	const siteName = 'MattiaCode Portfolio';
 
 	// Meta dinamici basati sulla lingua
