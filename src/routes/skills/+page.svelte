@@ -68,6 +68,22 @@
 	import screamingfrogImg from '$lib/assets/skill/screaming-frog.webp';
 	import ahrefsImg from '$lib/assets/skill/ahrefs.webp';
 
+	// New Tools
+	import vscodeImg from '$lib/assets/skill/vscode.webp';
+	import githubdesktopImg from '$lib/assets/skill/github-desktop.webp';
+	import notepadppImg from '$lib/assets/skill/notepadpp.webp';
+	import meldImg from '$lib/assets/skill/meld.webp';
+
+	// New Cloud Services
+	import awsImg from '$lib/assets/skill/aws.webp';
+	import netlifyImg from '$lib/assets/skill/netlify.webp';
+
+	// New Programming Language
+	import pythonImg from '$lib/assets/skill/python.webp';
+
+	// New Design Tool
+	import photoshopImg from '$lib/assets/skill/photoshop.webp';
+
 	// Front-End Development
 	const frontendSkills = [
 		{ name: 'React', img: reactImg },
@@ -102,6 +118,7 @@
 	// Programming Languages
 	const programmingSkills = [
 		{ name: 'TypeScript', img: typescriptImg },
+		{ name: 'Python', img: pythonImg },
 		{ name: 'C', img: cImg },
 		{ name: 'C#', img: csharpImg },
 		{ name: 'Lua', img: luaImg }
@@ -111,18 +128,24 @@
 	const toolsSkills = [
 		{ name: 'Git', img: gitImg },
 		{ name: 'Visual Studio', img: visualstudioImg },
+		{ name: 'Visual Studio Code', img: vscodeImg },
 		{ name: 'npm', img: npmImg },
 		{ name: 'Docker', img: dockerImg },
 		{ name: 'Local', img: localImg },
 		{ name: 'JSON', img: jsonImg },
 		{ name: 'ManicTime', img: manictimeImg },
-		{ name: 'Elementor', img: elementorImg }
+		{ name: 'Elementor', img: elementorImg },
+		{ name: 'Github Desktop', img: githubdesktopImg },
+		{ name: 'NotePad++', img: notepadppImg },
+		{ name: 'Meld', img: meldImg }
 	];
 
 	// Cloud & Services
 	const cloudSkills = [
 		{ name: 'Vercel', img: vercelImg },
 		{ name: 'Cloudflare', img: cloudflareImg },
+		{ name: 'AWS', img: awsImg },
+		{ name: 'Netlify', img: netlifyImg },
 		{ name: 'OneDrive', img: onedriveImg },
 		{ name: 'Stripe', img: stripeImg },
 		{ name: 'EmailJS', img: emailjsImg }
@@ -146,7 +169,8 @@
 	const designSkills = [
 		{ name: 'Figma', img: figmaImg },
 		{ name: 'Coolors', img: coolorsImg },
-		{ name: 'Dribbble', img: dribbbleImg }
+		{ name: 'Dribbble', img: dribbbleImg },
+		{ name: 'PhotoShop', img: photoshopImg }
 	];
 
 	// SEO & Marketing
