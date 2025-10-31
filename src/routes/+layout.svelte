@@ -1,27 +1,28 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.ico';
-	import Logo from '$lib/components/Logo.svelte';
+	import socialPreview from '$lib/assets/social-preview.webp';
 	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
-	import { t } from '$lib/stores/language';
+	import { t, language } from '$lib/stores/language';
 	import { initScrollAnimations } from '$lib/utils/scrollAnimations';
 	import { Home, User, FolderOpen, Target, Image, Sun, Moon } from 'lucide-svelte';
 
 	let { children } = $props();
-	let mobileMenuOpen = $state(false);
 
-	// Chiudi menu mobile
-	function closeMobileMenu() {
-		mobileMenuOpen = false;
-	}
+	// Base URL del sito (aggiorna con il tuo dominio reale)
+	const siteUrl = 'https://mattiacode.it';
+	const siteName = 'MattiaCode Portfolio';
 
-	// Toggle menu mobile
-	function toggleMobileMenu() {
-		mobileMenuOpen = !mobileMenuOpen;
-	}
+	// Meta dinamici basati sulla lingua
+	const metaTitle = $derived($language === 'it'
+		? 'MattiaCode - Portfolio Sviluppatore Web & Designer'
+		: 'MattiaCode - Web Developer & Designer Portfolio');
+	const metaDescription = $derived($language === 'it'
+		? 'Portfolio professionale di MattiaCode: sviluppatore web full-stack specializzato in SvelteKit, React, TypeScript. Progetti web moderni, design UI/UX e soluzioni digitali.'
+		: 'Professional portfolio of MattiaCode: full-stack web developer specializing in SvelteKit, React, TypeScript. Modern web projects, UI/UX design and digital solutions.');
 
 	// Inizializza animazioni scroll
 	onMount(() => {
@@ -42,8 +43,39 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Portfolio - Magic Design</title>
-	<meta name="description" content="Portfolio personale minimalista" />
+
+	<!-- SEO Meta Tags -->
+	<title>{metaTitle}</title>
+	<meta name="description" content={metaDescription} />
+	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, React, TypeScript, UI/UX design, portfolio, sviluppatore web, designer" />
+	<meta name="author" content="MattiaCode" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href={siteUrl + $page.url.pathname} />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={siteUrl + $page.url.pathname} />
+	<meta property="og:title" content={metaTitle} />
+	<meta property="og:description" content={metaDescription} />
+	<meta property="og:image" content={siteUrl + socialPreview} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:site_name" content={siteName} />
+	<meta property="og:locale" content={$language === 'it' ? 'it_IT' : 'en_US'} />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={siteUrl + $page.url.pathname} />
+	<meta name="twitter:title" content={metaTitle} />
+	<meta name="twitter:description" content={metaDescription} />
+	<meta name="twitter:image" content={siteUrl + socialPreview} />
+	<meta name="twitter:creator" content="@MattiaCode" />
+
+	<!-- Additional Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#111827" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
 	<!-- Protezioni sicurezza -->
 	<script src="/secure.js"></script>
 	<!-- Local resources -->
@@ -76,16 +108,13 @@
 	</style>
 </svelte:head>
 
-<!-- Navbar -->
-<nav class="fixed top-0 left-0 right-0 z-50">
-	<div class="max-w-7xl mx-auto px-4 py-3">
-		<div class="flex items-center justify-between gap-4">
-			<!-- Logo a sinistra -->
-			<Logo class="flex-shrink-0" />
-
-			<!-- UN UNICO contenitore centrale con TUTTI i link e toggle -->
-			<div class="hidden md:flex items-center bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1 py-1 backdrop-blur-sm">
-				<!-- Home - solo icona -->
+<!-- Desktop Navbar - Solo visibile su md e superiori -->
+<nav class="hidden md:block fixed top-0 left-0 right-0 z-50">
+	<div class="max-w-full px-2 py-3">
+		<div class="flex items-center justify-center">
+			<!-- Contenitore centrale con link e toggle - CENTRATO -->
+			<div class="flex items-center bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1 py-1 backdrop-blur-sm">
+				<!-- Home -->
 				<a
 					href="/"
 					class="p-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -96,10 +125,9 @@
 					<Home size={18} class="text-gray-700 dark:text-gray-300" />
 				</a>
 
-				<!-- Separatore 1 -->
 				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
 
-				<!-- About - icona + testo -->
+				<!-- About -->
 				<a
 					href="/about"
 					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -110,7 +138,7 @@
 					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.about}</span>
 				</a>
 
-				<!-- Project - icona + testo -->
+				<!-- Project -->
 				<a
 					href="/project"
 					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -121,7 +149,7 @@
 					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.project}</span>
 				</a>
 
-				<!-- Skills - icona + testo -->
+				<!-- Skills -->
 				<a
 					href="/skills"
 					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -132,7 +160,7 @@
 					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.skills}</span>
 				</a>
 
-				<!-- Gallery - icona + testo -->
+				<!-- Gallery -->
 				<a
 					href="/gallery"
 					class="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -143,10 +171,9 @@
 					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav.gallery}</span>
 				</a>
 
-				<!-- Separatore 2 -->
 				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
 
-				<!-- Toggle tema - solo icona -->
+				<!-- Toggle tema -->
 				<button
 					onclick={toggleTheme}
 					class="p-2 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -158,73 +185,135 @@
 						<Sun size={18} class="text-gray-300" />
 					{/if}
 				</button>
-			</div>
 
-			<!-- Selettore lingua a destra -->
-			<div class="hidden sm:block">
-				<LanguageSelector />
-			</div>
+				<!-- Separatore lingua -->
+				<div class="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1"></div>
 
-			<!-- Menu mobile hamburger -->
-			<button
-				class="md:hidden p-2 rounded-full bg-gray-100 dark:bg-gray-800"
-				aria-label="Toggle mobile menu"
-				onclick={toggleMobileMenu}
-			>
-				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-				</svg>
-			</button>
-		</div>
-
-		<!-- Menu mobile -->
-		{#if mobileMenuOpen}
-			<div class="md:hidden mt-3 pb-2">
-				<div class="bg-gray-100/80 dark:bg-gray-800/80 rounded-2xl p-2 backdrop-blur-sm">
-					{#each navItems as item}
-						{@const IconComponent = item.icon}
-						{@const labelKey = item.href === '/' ? 'home' : item.href.substring(1)}
-						<a
-							href={item.href}
-							onclick={closeMobileMenu}
-							class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
-							class:bg-white={$page.url.pathname === item.href}
-							class:dark:bg-gray-700={$page.url.pathname === item.href}
-						>
-							<IconComponent size={18} class="text-gray-700 dark:text-gray-300" />
-							<span class="text-sm font-medium text-gray-700 dark:text-gray-300">{$t.nav[labelKey]}</span>
-						</a>
-					{/each}
-					<div class="border-t border-gray-300 dark:border-gray-600 my-2"></div>
-					<button
-						onclick={toggleTheme}
-						class="w-full flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all"
-					>
-						{#if $theme === 'light'}
-							<Moon size={18} class="text-gray-700" />
-							<span class="text-sm font-medium text-gray-700">{$t.theme.dark}</span>
-						{:else}
-							<Sun size={18} class="text-gray-300" />
-							<span class="text-sm font-medium text-gray-300">{$t.theme.light}</span>
-						{/if}
-					</button>
-					<div class="mt-2">
-						<LanguageSelector />
-					</div>
+				<!-- Selettore lingua -->
+				<div class="px-1">
+					<LanguageSelector />
 				</div>
 			</div>
-		{/if}
+		</div>
+	</div>
+</nav>
+
+<!-- Mobile Bottom Navigation - Solo visibile su < md -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4">
+	<div class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg rounded-3xl shadow-lg border border-gray-200 dark:border-gray-800 px-3 py-3">
+		<div class="flex items-center justify-around">
+			<!-- Home -->
+			<a
+				href="/"
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all"
+				class:text-blue-600={$page.url.pathname === '/'}
+				class:dark:text-blue-400={$page.url.pathname === '/'}
+				class:text-gray-600={$page.url.pathname !== '/'}
+				class:dark:text-gray-400={$page.url.pathname !== '/'}
+				aria-label="Home"
+			>
+				<Home size={24} />
+			</a>
+
+			<!-- About -->
+			<a
+				href="/about"
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all"
+				class:text-blue-600={$page.url.pathname === '/about'}
+				class:dark:text-blue-400={$page.url.pathname === '/about'}
+				class:text-gray-600={$page.url.pathname !== '/about'}
+				class:dark:text-gray-400={$page.url.pathname !== '/about'}
+				aria-label="About"
+			>
+				<User size={24} />
+			</a>
+
+			<!-- Project -->
+			<a
+				href="/project"
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all"
+				class:text-blue-600={$page.url.pathname === '/project'}
+				class:dark:text-blue-400={$page.url.pathname === '/project'}
+				class:text-gray-600={$page.url.pathname !== '/project'}
+				class:dark:text-gray-400={$page.url.pathname !== '/project'}
+				aria-label="Projects"
+			>
+				<FolderOpen size={24} />
+			</a>
+
+			<!-- Skills -->
+			<a
+				href="/skills"
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all"
+				class:text-blue-600={$page.url.pathname === '/skills'}
+				class:dark:text-blue-400={$page.url.pathname === '/skills'}
+				class:text-gray-600={$page.url.pathname !== '/skills'}
+				class:dark:text-gray-400={$page.url.pathname !== '/skills'}
+				aria-label="Skills"
+			>
+				<Target size={24} />
+			</a>
+
+			<!-- Gallery -->
+			<a
+				href="/gallery"
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all"
+				class:text-blue-600={$page.url.pathname === '/gallery'}
+				class:dark:text-blue-400={$page.url.pathname === '/gallery'}
+				class:text-gray-600={$page.url.pathname !== '/gallery'}
+				class:dark:text-gray-400={$page.url.pathname !== '/gallery'}
+				aria-label="Gallery"
+			>
+				<Image size={24} />
+			</a>
+
+			<!-- Dark Mode Toggle -->
+			<button
+				onclick={toggleTheme}
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all text-gray-600 dark:text-gray-400"
+				aria-label="Toggle theme"
+			>
+				{#if $theme === 'light'}
+					<Moon size={24} />
+				{:else}
+					<Sun size={24} />
+				{/if}
+			</button>
+
+			<!-- Language Toggle - Icona bandiera -->
+			<button
+				onclick={() => language.toggle()}
+				class="flex flex-col items-center justify-center p-2 rounded-xl transition-all text-gray-600 dark:text-gray-400"
+				aria-label="Toggle language"
+			>
+				{#if $language === 'it'}
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="2" y="6" width="6.67" height="12" fill="#009246"/>
+						<rect x="8.67" y="6" width="6.67" height="12" fill="#F1F2F1"/>
+						<rect x="15.33" y="6" width="6.67" height="12" fill="#CE2B37"/>
+					</svg>
+				{:else}
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="2" y="6" width="20" height="12" fill="#012169"/>
+						<path d="M2 6L22 18M22 6L2 18" stroke="white" stroke-width="2"/>
+						<path d="M2 6L22 18M22 6L2 18" stroke="#C8102E" stroke-width="1.2"/>
+						<path d="M12 6V18M2 12H22" stroke="white" stroke-width="4"/>
+						<path d="M12 6V18M2 12H22" stroke="#C8102E" stroke-width="2.4"/>
+					</svg>
+				{/if}
+			</button>
+		</div>
 	</div>
 </nav>
 
 <!-- Main content con padding per navbar -->
-<main class="pt-16 min-h-screen page-transition">
+<main class="md:pt-16 min-h-screen page-transition">
 	{@render children?.()}
 </main>
 
 <!-- Footer -->
 <footer class="border-t border-gray-200 dark:border-gray-800">
-	<div class="max-w-7xl mx-auto px-4 py-8">
+	<div class="max-w-7xl mx-auto px-4 py-6">
 		<div class="flex flex-col md:flex-row items-center justify-between gap-4">
 			<!-- Left/Center: Copyright e credits -->
 			<div class="flex flex-wrap items-center justify-center md:justify-start gap-x-2 text-xs text-gray-500 dark:text-gray-500">
@@ -260,3 +349,6 @@
 		</div>
 	</div>
 </footer>
+
+<!-- Mobile spacer - Spazio vuoto per la bottom navbar -->
+<div class="md:hidden h-32" aria-hidden="true"></div>

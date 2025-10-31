@@ -58,6 +58,32 @@
 	import chatgptImg from '$lib/assets/skill/ChatGPT.webp';
 	import claudeImg from '$lib/assets/skill/claude.webp';
 
+	// Design & UI/UX
+	import figmaImg from '$lib/assets/skill/figma.webp';
+	import coolorsImg from '$lib/assets/skill/coolors.webp';
+	import googlefonts from '$lib/assets/skill/google-fonts.webp';
+	import dribbbleImg from '$lib/assets/skill/dribbble.webp';
+
+	// SEO & Marketing
+	import screamingfrogImg from '$lib/assets/skill/screaming-frog.webp';
+	import ahrefsImg from '$lib/assets/skill/ahrefs.webp';
+
+	// New Tools
+	import vscodeImg from '$lib/assets/skill/vscode.webp';
+	import githubdesktopImg from '$lib/assets/skill/github-desktop.webp';
+	import notepadppImg from '$lib/assets/skill/notepadpp.webp';
+	import meldImg from '$lib/assets/skill/meld.webp';
+
+	// New Cloud Services
+	import awsImg from '$lib/assets/skill/aws.webp';
+	import netlifyImg from '$lib/assets/skill/netlify.webp';
+
+	// New Programming Language
+	import pythonImg from '$lib/assets/skill/python.webp';
+
+	// New Design Tool
+	import photoshopImg from '$lib/assets/skill/photoshop.webp';
+
 	// Front-End Development
 	const frontendSkills = [
 		{ name: 'React', img: reactImg },
@@ -70,7 +96,8 @@
 		{ name: 'Tailwind CSS', img: tailwindImg },
 		{ name: 'Bootstrap', img: bootstrapImg },
 		{ name: 'Alpine.js', img: alpineImg },
-		{ name: 'Chart.js', img: chartjsImg }
+		{ name: 'Chart.js', img: chartjsImg },
+		{ name: 'Google Fonts', img: googlefonts }
 	];
 
 	// Back-End & CMS
@@ -91,6 +118,7 @@
 	// Programming Languages
 	const programmingSkills = [
 		{ name: 'TypeScript', img: typescriptImg },
+		{ name: 'Python', img: pythonImg },
 		{ name: 'C', img: cImg },
 		{ name: 'C#', img: csharpImg },
 		{ name: 'Lua', img: luaImg }
@@ -100,18 +128,24 @@
 	const toolsSkills = [
 		{ name: 'Git', img: gitImg },
 		{ name: 'Visual Studio', img: visualstudioImg },
+		{ name: 'Visual Studio Code', img: vscodeImg },
 		{ name: 'npm', img: npmImg },
 		{ name: 'Docker', img: dockerImg },
 		{ name: 'Local', img: localImg },
 		{ name: 'JSON', img: jsonImg },
 		{ name: 'ManicTime', img: manictimeImg },
-		{ name: 'Elementor', img: elementorImg }
+		{ name: 'Elementor', img: elementorImg },
+		{ name: 'Github Desktop', img: githubdesktopImg },
+		{ name: 'NotePad++', img: notepadppImg },
+		{ name: 'Meld', img: meldImg }
 	];
 
 	// Cloud & Services
 	const cloudSkills = [
 		{ name: 'Vercel', img: vercelImg },
 		{ name: 'Cloudflare', img: cloudflareImg },
+		{ name: 'AWS', img: awsImg },
+		{ name: 'Netlify', img: netlifyImg },
 		{ name: 'OneDrive', img: onedriveImg },
 		{ name: 'Stripe', img: stripeImg },
 		{ name: 'EmailJS', img: emailjsImg }
@@ -129,6 +163,20 @@
 	const aiSkills = [
 		{ name: 'ChatGPT', img: chatgptImg },
 		{ name: 'Claude', img: claudeImg }
+	];
+
+	// Design & UI/UX
+	const designSkills = [
+		{ name: 'Figma', img: figmaImg },
+		{ name: 'Coolors', img: coolorsImg },
+		{ name: 'Dribbble', img: dribbbleImg },
+		{ name: 'PhotoShop', img: photoshopImg }
+	];
+
+	// SEO & Marketing
+	const seoSkills = [
+		{ name: 'Screaming Frog', img: screamingfrogImg },
+		{ name: 'Ahrefs', img: ahrefsImg }
 	];
 </script>
 
@@ -317,6 +365,52 @@
 			</h2>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
 				{#each aiSkills as skill}
+					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+						<div class="flex flex-col items-center justify-center text-center h-full">
+							<img
+								src={skill.img}
+								alt={skill.name}
+								class="w-14 h-14 mb-4 object-contain"
+							/>
+							<p class="text-sm font-medium text-gray-900 dark:text-white">
+								{skill.name}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<!-- Design & UI/UX -->
+		<section class="mb-20">
+			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+				Design & UI/UX
+			</h2>
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+				{#each designSkills as skill}
+					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+						<div class="flex flex-col items-center justify-center text-center h-full">
+							<img
+								src={skill.img}
+								alt={skill.name}
+								class="w-14 h-14 mb-4 object-contain"
+							/>
+							<p class="text-sm font-medium text-gray-900 dark:text-white">
+								{skill.name}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<!-- SEO & Marketing -->
+		<section class="mb-20">
+			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+				SEO & Marketing
+			</h2>
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+				{#each seoSkills as skill}
 					<div class="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 						<div class="flex flex-col items-center justify-center text-center h-full">
 							<img

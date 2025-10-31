@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Mail, MapPin, Github, Linkedin, Calendar } from 'lucide-svelte';
 	import { t } from '$lib/stores/language';
+	import meImage from '$lib/assets/me.webp';
 
 	let activeSection = $state('introduction');
 
@@ -26,9 +27,11 @@
 				<div class="bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 					<!-- Foto profilo -->
 					<div class="flex justify-center mb-6">
-						<div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-3xl font-bold">
-							S
-						</div>
+						<img
+							src={meImage}
+							alt="MattiaCode"
+							class="w-24 h-24 rounded-full object-cover"
+						/>
 					</div>
 
 					<!-- Nome -->
@@ -160,20 +163,6 @@
 								{$t.about.job2Description}
 							</p>
 						</div>
-
-						<!-- Job 3 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<div class="flex items-start justify-between mb-4">
-								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job3Title}</h3>
-									<p class="text-gray-600 dark:text-gray-400">{$t.about.job3Company}</p>
-								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.job3Period}</span>
-							</div>
-							<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-								{$t.about.job3Description}
-							</p>
-						</div>
 					</div>
 				</section>
 
@@ -181,17 +170,35 @@
 				<section id="studies" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
 					<div class="space-y-6">
+						<!-- Education 2 - Dublino -->
 						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-2">
 								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education1Title}</h3>
-									<p class="text-gray-600 dark:text-gray-400">{$t.about.education1School}</p>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education2Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.education2School}</p>
 								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education1Period}</span>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education2Period}</span>
 							</div>
 							<p class="text-gray-700 dark:text-gray-300">
-								{$t.about.education1Focus}
+								{$t.about.education2Focus}
 							</p>
+						</div>
+
+						<!-- Education 3 - iubenda GDPR -->
+						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
+							<div class="flex items-start justify-between mb-2">
+								<div>
+									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education3Title}</h3>
+									<p class="text-gray-600 dark:text-gray-400">{$t.about.education3School}</p>
+								</div>
+								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education3Period}</span>
+							</div>
+							<p class="text-gray-700 dark:text-gray-300 mb-3">
+								{$t.about.education3Focus}
+							</p>
+							<a href="/iubenda-partner" class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
+								{$t.about.education3Link} →
+							</a>
 						</div>
 					</div>
 				</section>
