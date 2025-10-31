@@ -163,20 +163,6 @@
 								{$t.about.job2Description}
 							</p>
 						</div>
-
-						<!-- Job 3 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<div class="flex items-start justify-between mb-4">
-								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.job3Title}</h3>
-									<p class="text-gray-600 dark:text-gray-400">{$t.about.job3Company}</p>
-								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.job3Period}</span>
-							</div>
-							<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-								{$t.about.job3Description}
-							</p>
-						</div>
 					</div>
 				</section>
 
@@ -184,20 +170,6 @@
 				<section id="studies" class="mb-16 scroll-mt-24">
 					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{$t.about.studies}</h2>
 					<div class="space-y-6">
-						<!-- Education 1 -->
-						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
-							<div class="flex items-start justify-between mb-2">
-								<div>
-									<h3 class="text-xl font-bold text-gray-900 dark:text-white">{$t.about.education1Title}</h3>
-									<p class="text-gray-600 dark:text-gray-400">{$t.about.education1School}</p>
-								</div>
-								<span class="text-sm text-gray-600 dark:text-gray-400">{$t.about.education1Period}</span>
-							</div>
-							<p class="text-gray-700 dark:text-gray-300">
-								{$t.about.education1Focus}
-							</p>
-						</div>
-
 						<!-- Education 2 - Dublino -->
 						<div class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50">
 							<div class="flex items-start justify-between mb-2">
